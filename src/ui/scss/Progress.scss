@@ -10,7 +10,7 @@
 	min-width : 1em;
 	width     : 1em;
 	height    : 1em;
-	mask      : url("../img/circleProgress.svg") no-repeat center / contain;
+	mask      : url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0'?%3e%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' xml:space='preserve' width='100%25' height='100%25' viewBox='22 22 44 44'%3e%3ccircle class='CircularProgress-circle' cx='44' cy='44' r='20.2' fill='none' stroke='%23000' stroke-width='3.6' style='animation: CircularProgress 1.4s ease-in-out infinite;'%3e%3c/circle%3e%3cstyle%3e %40keyframes CircularProgress %7b 0%25 %7b stroke-dasharray : 1px, 200px; stroke-dashoffset: 0px;%7d 50%25 %7b stroke-dasharray : 100px, 200px; stroke-dashoffset: -15px;%7d 100%25 %7b stroke-dasharray : 100px, 200px; stroke-dashoffset: -125px;%7d %7d %3c/style%3e%3c/svg%3e") no-repeat center / contain;
 	background: currentColor;
 
 	.icon {
