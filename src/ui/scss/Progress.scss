@@ -6,12 +6,12 @@
 	align-items    : center;
 	justify-content: center;
 
-	font-size      : 32px;
-	min-width      : 1em;
-	width          : 1em;
-	height         : 1em;
-	mask           : url("../img/circleProgress.svg") no-repeat center / contain;
-	background     : currentColor;
+	font-size : 32px;
+	min-width : 1em;
+	width     : 1em;
+	height    : 1em;
+	mask      : url("../img/circleProgress.svg") no-repeat center / contain;
+	background: currentColor;
 
 	.icon {
 		fill  : none;
@@ -31,19 +31,21 @@
 }
 
 .progress-container .progress {
-	position: absolute;
-	width   : 32px;
-	height  : 32px;
-	left    : calc(50% - 16px);
-	top     : calc(50% - 16px);
+	position : absolute;
+	width    : 32px;
+	height   : 32px;
+	left     : calc(50% - 16px);
+	top      : calc(50% - 16px);
+	mask-size: 1em;
 }
 
 .image .progress {
-	position: absolute;
-	width   : 32px;
-	height  : 32px;
-	left    : calc(50% - 16px);
-	top     : calc(50% - 16px);
+	position : absolute;
+	width    : 32px;
+	height   : 32px;
+	left     : calc(50% - 16px);
+	top      : calc(50% - 16px);
+	mask-size: 1em;
 }
 
 

@@ -1,10 +1,8 @@
 // out: false
 
-:root {}
 
 
 .form {
-
 	&-field {
 		display      : block;
 		cursor       : pointer;
@@ -114,12 +112,12 @@
 		}
 
 
-		input& {
+		&:is(input) {
 			width         : 100px;
 			// line-height: 40px;
 		}
 
-		textarea& {
+		&:is(textarea) {
 			min-height: 128px;
 		}
 	}

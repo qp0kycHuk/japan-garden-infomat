@@ -1,8 +1,8 @@
 import UI from './ui/js/index'
-import './ui/ui-reset.less'
-import './ui/ui-core.less'
-import './ui/ui-example.less'
-import './less/frontend--style.less'
+import './ui/ui-reset.scss'
+import './ui/ui-core.scss'
+import './ui/ui-example.scss'
+import './scss/frontend--style.scss'
 
 
 UI.init()

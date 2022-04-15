@@ -1,8 +1,6 @@
 // out:false
 
-
-
-.fade {
+@mixin Fade {
   &-10 {
     opacity: .1;
   }
@@ -38,4 +36,12 @@
   &-90 {
     opacity: .9;
   }
+}
+
+.fade {
+  @include AddMedia {
+    @include Fade;
+
+  }
+  
 }

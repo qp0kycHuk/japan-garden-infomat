@@ -1,5 +1,19 @@
 // out: false
 
+@mixin btnColor($name, $accent:#fff) {
+	&--#{$name} {
+		--btn-color      : var(--color-#{$name});
+		--btn-color-light: var(--color-#{$name}-10);
+		--btn-text       : #{$accent};
+
+		@media (hover) {
+			&:hover {
+				--btn-color      : var(--color-#{$name}--dark);
+				--btn-color-light: var(--color-#{$name}-20);
+			}
+		}
+	}
+}
 
 .btn {
 	--btn-color-light: var(--color-text-20);
@@ -45,7 +59,7 @@
 
 	@media (hover) {
 		&:hover {
-			--btn-color      : var(--color-text-dark);
+			--btn-color      : var(--color-text--dark);
 			--btn-color-light: var(--color-text-40);
 		}
 	}
@@ -70,83 +84,14 @@
 	}
 
 	// color
-	&--primary {
-		--btn-color      : var(--color-primary);
-		--btn-color-light: var(--color-primary-10);
-		--btn-text       : #fff;
+	@include btnColor(#{"primary"});
+	@include btnColor(#{"sec"});
+	@include btnColor(#{"red"});
+	@include btnColor(#{"blue"});
+	@include btnColor(#{"green"});
+	@include btnColor(#{"yellow"});
+	@include btnColor(#{"icon"});
 
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-primary--dark);
-				--btn-color-light: var(--color-primary-20);
-			}
-		}
-	}
-
-	&--sec {
-		--btn-color      : var(--color-sec);
-		--btn-color-light: var(--color-sec-10);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-sec--dark);
-				--btn-color-light: var(--color-sec-20);
-			}
-		}
-	}
-
-	&--red {
-		--btn-color      : var(--color-red);
-		--btn-color-light: var(--color-red-10);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-red--dark);
-				--btn-color-light: var(--color-red-20);
-			}
-		}
-	}
-
-	&--blue {
-		--btn-color      : var(--color-blue);
-		--btn-color-light: var(--color-blue-10);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-blue--dark);
-				--btn-color-light: var(--color-blue-20);
-			}
-		}
-	}
-
-	&--green {
-		--btn-color      : var(--color-green);
-		--btn-color-light: var(--color-green-10);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-green--dark);
-				--btn-color-light: var(--color-green-20);
-			}
-		}
-	}
-
-	&--yellow {
-		--btn-color      : var(--color-yellow);
-		--btn-color-light: var(--color-yellow-10);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-yellow--dark);
-				--btn-color-light: var(--color-yellow-20);
-			}
-		}
-	}
 
 	&--white {
 		--btn-color      : #fff;
@@ -170,19 +115,6 @@
 			&:hover {
 				--btn-color      : rgba(49, 49, 49, 0.6);
 				--btn-color-light: #eef0f5;
-			}
-		}
-	}
-
-	&--color-icon {
-		--btn-color      : var(--color-icon);
-		--btn-color-light: var(--color-icon-20);
-		--btn-text       : #fff;
-
-		@media (hover) {
-			&:hover {
-				--btn-color      : var(--color-icon--dark);
-				--btn-color-light: var(--color-icon-30);
 			}
 		}
 	}
@@ -299,35 +231,3 @@
 	}
 
 }
-
-
-// .btn {
-// 	.ripple {
-// 		background: radial-gradient(rgba(255, 255, 255, 0.10) 0,
-// 				rgba(255, 255, 255, 0.20) 40%,
-// 				rgba(255, 255, 255, 0.20) calc(60% - 10px),
-// 				rgba(255, 255, 255, 0.20) 60%,
-// 				rgba(0, 0, 0, 0) calc(60% + 10px));
-// 	}
-// }
-
-// .btn--fill {
-// 	.ripple {
-// 		background: radial-gradient(rgba(255, 255, 255, 0.10) 0,
-// 				rgba(255, 255, 255, 0.20) 40%,
-// 				rgba(255, 255, 255, 0.20) calc(60% - 10px),
-// 				rgba(255, 255, 255, 0.20) 60%,
-// 				rgba(0, 0, 0, 0) calc(60% + 10px));
-// 	}
-// }
-
-
-// .btn--white-bg {
-// 	.ripple {
-// 		background: radial-gradient(var(--btn-color-light) 0,
-// 				var(--btn-color-light) 40%,
-// 				var(--btn-color-light) calc(60% - 10px),
-// 				var(--btn-color-light) 60%,
-// 				rgba(0, 0, 0, 0) calc(60% + 10px));
-// 	}
-// }

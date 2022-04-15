@@ -30,9 +30,10 @@ function loadHandler() {
 const init = () => {
   Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
   Swiper.defaults.touchStartPreventDefault = false
-  console.log(Swiper);
   window.Swiper = Swiper
+
   window.ripple = ripple
+
   window.addEventListener('DOMContentLoaded', () => loadHandler())
 }
 

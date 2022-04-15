@@ -29,26 +29,14 @@ section {
 }
 
 
-@media (min-width: @md) {
+@media (min-width: $md) {
   :root {
     --section-width: 650px;
   }
 }
 
-// @media (min-width: 992px) {
-//   :root {
-//     --section-width     : 970px;
-//     --section-gap-top   : 52px;
-//     --section-gap-bottom: 64px;
-//   }
-// }
-@media (min-width: 1016px) {
-  :root {
-    --section-width: 1000px;
-  }
-}
 
-@media (min-width: 1054px) {
+@media (min-width: $lg) {
   :root {
     --section-width: 1024px;
   }

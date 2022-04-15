@@ -104,7 +104,7 @@ function clickHandler(event) {
 
     const remove = () => {
       isRemoved = true
-      setTimeout(() => ripple.parentElement.removeChild(ripple), 500)
+      setTimeout(() => ripple?.parentElement?.removeChild(ripple), 500)
     }
 
     if (isRemoved) return

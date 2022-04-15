@@ -1,9 +1,8 @@
 // out: false
-@import './_variables.less';
+@import './_variables.scss';
 
 .card {
 	background       : var(--bg3);
-	// border        : 1px solid #E2E8F0;
 	box-sizing       : border-box;
 	border-radius    : var(--radius-middle);
 	position         : relative;
@@ -49,9 +48,6 @@
 		max-height      : 278px;
 		min-height      : 128px;
 		overflow        : hidden;
-		// width        : calc(100% + 2px);
-		// margin-left  : -1px;
-		// margin-top   : -1px;
 		width           : 100%;
 
 		&:before {

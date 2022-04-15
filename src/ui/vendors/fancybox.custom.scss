@@ -6,7 +6,7 @@
   .fancybox__slide {
     padding: 15px;
 
-    @media(max-width:@sm) {
+    @media(max-width:$sm) {
       padding: 0;
 
     }
@@ -21,7 +21,7 @@
     padding   : 0;
     background: none;
 
-    @media(max-width:@sm) {
+    @media(max-width:$sm) {
       width        : 100%;
       border-radius: 16px 16px 0 0;
     }
@@ -36,7 +36,7 @@
     height         : 68px;
     animation-delay: .35s !important;
 
-    @media(max-width:@sm) {
+    @media(max-width:$sm) {
       position: absolute;
       width   : 32px;
       height  : 32px;
@@ -49,7 +49,7 @@
     }
 
     svg {
-      @media(max-width:@sm) {
+      @media(max-width:$sm) {
         filter: none;
         color : #000;
         width : 12px;

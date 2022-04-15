@@ -29,7 +29,7 @@ module.exports = {
         type: 'asset/resource',
       },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
-      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
+      { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,

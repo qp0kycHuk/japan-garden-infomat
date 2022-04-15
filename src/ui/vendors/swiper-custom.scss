@@ -38,9 +38,9 @@ img.swiper-lazy:not(.swiper-lazy-loaded){
   position: absolute !important;
   top     : calc(50% - 30px);
   z-index : 3;
-  @arrowLg1: @lg + (2 * (15px + 60px - 24px));
+  $arrowLg1: $lg + (2 * (15px + 60px - 24px));
 
-  @media(max-width:@arrowLg1) {
+  @media(max-width:$arrowLg1) {
    top: calc(50% - 15px);
   }
 }
@@ -48,14 +48,14 @@ img.swiper-lazy:not(.swiper-lazy-loaded){
 
 .slider-next {
   left    : calc(100% + 24px);
-  @arrowLg: @lg + (2 * (24px + 60px + 24px));
+  $arrowLg: $lg + (2 * (24px + 60px + 24px));
 
 
-  @media(max-width:@arrowLg) {
+  @media(max-width:$arrowLg) {
     left: calc(100% - 24px);
   }
 
-  @media(max-width:@md) {
+  @media(max-width:$md) {
     left: auto;
     right: 2px;
   }
@@ -64,20 +64,20 @@ img.swiper-lazy:not(.swiper-lazy-loaded){
 
 .slider-prev {
   right   : calc(100% + 24px);
-  @arrowLg: @lg + (2 * (24px + 60px + 24px));
+  $arrowLg: $lg + (2 * (24px + 60px + 24px));
 
-  @media(max-width:@arrowLg) {
+  @media(max-width:$arrowLg) {
     right: calc(100% - 24px);
   }
 
-  @media(max-width:@md) {
+  @media(max-width:$md) {
     right: auto;
     left: 2px;
   }
 }
 
 .slider--overwrap {
-	@media(max-width:@md) {
+	@media(max-width:$md) {
 		width        : calc(100% + 30px);
 		margin-left  : -15px;
 		margin-right : -15px;
@@ -87,7 +87,7 @@ img.swiper-lazy:not(.swiper-lazy-loaded){
 	}
 
 	.swiper {
-		@media(max-width:@md) {
+		@media(max-width:$md) {
 			overflow: visible;
 		}
 	}
