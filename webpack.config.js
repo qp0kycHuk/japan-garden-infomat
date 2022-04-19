@@ -53,7 +53,22 @@ module.exports = {
       ...htmlWebpackPluginDefaults,
       template: './src/ui.html',
       filename: 'ui.html'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      ...htmlWebpackPluginDefaults,
+      template: './src/dialog-small.html',
+      filename: 'dialog-small.html'
+    }),
+    new HtmlWebpackPlugin({
+      ...htmlWebpackPluginDefaults,
+      template: './src/dialog-middle.html',
+      filename: 'dialog-middle.html'
+    }),
+    new HtmlWebpackPlugin({
+      ...htmlWebpackPluginDefaults,
+      template: './src/dialog-large.html',
+      filename: 'dialog-large.html'
+    }),
   ],
   devServer: {
     contentBase: PUBLIC_PATH,

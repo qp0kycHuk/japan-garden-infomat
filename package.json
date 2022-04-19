@@ -23,7 +23,6 @@
     "postcss-loader": "^6.2.1",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
-    "scss-loader": "^10.2.0",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
@@ -35,6 +34,9 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.17",
+    "npm-kit-ripple": "^1.0.1",
+    "npm-kit-tab": "^1.0.0",
+    "npm-kit-toggle": "^1.0.0",
     "swiper": "^7.4.1"
   }
 }

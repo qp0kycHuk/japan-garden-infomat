@@ -1,21 +1,20 @@
-import loadFile from "./load-file";
 import showPass from "./show-pass";
 import fancybox from "./fancybox";
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
-import 'swiper/css';
-import tab from './ui--tab';
 import rangeSlider from './range-slider';
-import toggle from './ui--toggle';
-import ripple from './ripple';
+import tab from 'npm-kit-tab';
+import toggle from 'npm-kit-toggle';
+import ripple from 'npm-kit-ripple';
 import theme from './theme';
 
+import 'npm-kit-ripple/index.css';
+import 'swiper/css';
 
 
 
 function loadHandler() {
   fancybox.init();
   showPass.init();
-  loadFile.init();
   rangeSlider.init()
   tab.init();
   toggle.init();
@@ -31,7 +30,6 @@ const init = () => {
   Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
   Swiper.defaults.touchStartPreventDefault = false
   window.Swiper = Swiper
-
   window.ripple = ripple
 
   window.addEventListener('DOMContentLoaded', () => loadHandler())
@@ -39,6 +37,11 @@ const init = () => {
 
 const destroy = () => {
   window.addEventListener('DOMContentLoaded', () => loadHandler())
+
+  ripple.destroy()
+  tab.destroy()
+  toggle.destroy()
+  theme.destroy()
 }
 
 

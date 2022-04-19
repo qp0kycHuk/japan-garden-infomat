@@ -2,7 +2,7 @@
 
 
 @mixin Padding($direction:false) {
-	@for $i from 1 through 10 {
+	@for $i from 0 through 10 {
 		&-#{$i} {
 			@if $direction==x {
 				padding-left : calc(var(--spacing) * #{$i});
