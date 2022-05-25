@@ -1,10 +1,5 @@
-// out: false, compress: true
-
-
 @import '../ui/scss/_variables.scss';
 @import '../ui/scss/_functions.scss';
-
-
 
 :root {
 	@include getColors(#D21C4B, "primary");
@@ -16,15 +11,11 @@
 	@include getColors(#828A99, "icon");
 	@include getColors(#333333, "text");
 
-
-
 	--bg1: #E9EAEC;
 	--bg2: #F4F5F6;
 	--bg3: #FFFFFF;
 
-
 	--spacing: 4px;
-
 
 	--radius-small : 4px;
 	--radius-middle: 8px;
@@ -66,8 +57,6 @@ body {
 	}
 
 }
-
-
 
 .active-enabled {
 	display: none !important;

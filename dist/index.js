@@ -121,39 +121,6 @@ function getCookie(name) {
 
 /***/ }),
 
-/***/ "./src/ui/js/functions/getSupportedEvents.js":
-/*!***************************************************!*\
-  !*** ./src/ui/js/functions/getSupportedEvents.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ getSupportedEvents)
-/* harmony export */ });
-function getSupportedEvents() {
-  var support = {
-    pointer: !!("PointerEvent" in window || "msPointerEnabled" in window.navigator),
-    touch: !!(typeof window.orientation !== "undefined" || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || "ontouchstart" in window || navigator.msMaxTouchPoints || "maxTouchPoints" in window.navigator > 1 || "msMaxTouchPoints" in window.navigator > 1)
-  };
-  return support.touch ? {
-    type: 'touch',
-    start: "touchstart",
-    end: "touchend",
-    cancel: "touchcancel",
-    move: "touchmove"
-  } : {
-    type: 'mouse',
-    start: "mousedown",
-    end: "mouseup",
-    cancel: "mouseleave",
-    move: "mousemove"
-  };
-}
-;
-
-/***/ }),
-
 /***/ "./src/ui/js/index.js":
 /*!****************************!*\
   !*** ./src/ui/js/index.js ***!
@@ -164,16 +131,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _load_file__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./load-file */ "./src/ui/js/load-file.js");
-/* harmony import */ var _show_pass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./show-pass */ "./src/ui/js/show-pass.js");
-/* harmony import */ var _fancybox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fancybox */ "./src/ui/js/fancybox.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var _ui_tab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui--tab */ "./src/ui/js/ui--tab.js");
-/* harmony import */ var _range_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./range-slider */ "./src/ui/js/range-slider.js");
-/* harmony import */ var _ui_toggle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ui--toggle */ "./src/ui/js/ui--toggle.js");
-/* harmony import */ var _ripple__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ripple */ "./src/ui/js/ripple.js");
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./theme */ "./src/ui/js/theme.js");
+/* harmony import */ var _show_pass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./show-pass */ "./src/ui/js/show-pass.js");
+/* harmony import */ var _fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fancybox */ "./src/ui/js/fancybox.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _range_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./range-slider */ "./src/ui/js/range-slider.js");
+/* harmony import */ var npm_kit_tab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! npm-kit-tab */ "./node_modules/npm-kit-tab/index.js");
+/* harmony import */ var npm_kit_toggle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! npm-kit-toggle */ "./node_modules/npm-kit-toggle/index.js");
+/* harmony import */ var npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! npm-kit-ripple */ "./node_modules/npm-kit-ripple/index.js");
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./theme */ "./src/ui/js/theme.js");
+/* harmony import */ var npm_kit_ripple_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! npm-kit-ripple/index.css */ "./node_modules/npm-kit-ripple/index.css");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 
 
 
@@ -186,24 +153,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function loadHandler() {
-  _fancybox__WEBPACK_IMPORTED_MODULE_2__["default"].init();
-  _show_pass__WEBPACK_IMPORTED_MODULE_1__["default"].init();
-  _load_file__WEBPACK_IMPORTED_MODULE_0__["default"].init();
-  _range_slider__WEBPACK_IMPORTED_MODULE_6__["default"].init();
-  _ui_tab__WEBPACK_IMPORTED_MODULE_5__["default"].init();
-  _ui_toggle__WEBPACK_IMPORTED_MODULE_7__["default"].init();
-  _ripple__WEBPACK_IMPORTED_MODULE_8__["default"].init();
-  _theme__WEBPACK_IMPORTED_MODULE_9__["default"].init();
-  _ripple__WEBPACK_IMPORTED_MODULE_8__["default"].attach('.btn');
-  _ripple__WEBPACK_IMPORTED_MODULE_8__["default"].attach('.waved');
-  _ripple__WEBPACK_IMPORTED_MODULE_8__["default"].deAttach('.btn--link');
+  _fancybox__WEBPACK_IMPORTED_MODULE_1__["default"].init();
+  _show_pass__WEBPACK_IMPORTED_MODULE_0__["default"].init();
+  _range_slider__WEBPACK_IMPORTED_MODULE_3__["default"].init();
+  npm_kit_tab__WEBPACK_IMPORTED_MODULE_4__["default"].init();
+  npm_kit_toggle__WEBPACK_IMPORTED_MODULE_5__["default"].init();
+  npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].init();
+  _theme__WEBPACK_IMPORTED_MODULE_7__["default"].init();
+  npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].attach('.btn');
+  npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].attach('.waved');
+  npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].deAttach('.btn--link');
 }
 
 var init = function init() {
-  swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_3__.Scrollbar, swiper__WEBPACK_IMPORTED_MODULE_3__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_3__.Grid, swiper__WEBPACK_IMPORTED_MODULE_3__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_3__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_3__.Lazy]);
-  swiper__WEBPACK_IMPORTED_MODULE_3__["default"].defaults.touchStartPreventDefault = false;
-  window.Swiper = swiper__WEBPACK_IMPORTED_MODULE_3__["default"];
-  window.ripple = _ripple__WEBPACK_IMPORTED_MODULE_8__["default"];
+  swiper__WEBPACK_IMPORTED_MODULE_2__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_2__.Scrollbar, swiper__WEBPACK_IMPORTED_MODULE_2__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_2__.Grid, swiper__WEBPACK_IMPORTED_MODULE_2__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_2__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_2__.Lazy]);
+  swiper__WEBPACK_IMPORTED_MODULE_2__["default"].defaults.touchStartPreventDefault = false;
+  window.Swiper = swiper__WEBPACK_IMPORTED_MODULE_2__["default"];
+  window.ripple = npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"];
   window.addEventListener('DOMContentLoaded', function () {
     return loadHandler();
   });
@@ -213,59 +179,15 @@ var destroy = function destroy() {
   window.addEventListener('DOMContentLoaded', function () {
     return loadHandler();
   });
+  npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].destroy();
+  npm_kit_tab__WEBPACK_IMPORTED_MODULE_4__["default"].destroy();
+  npm_kit_toggle__WEBPACK_IMPORTED_MODULE_5__["default"].destroy();
+  _theme__WEBPACK_IMPORTED_MODULE_7__["default"].destroy();
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   init: init,
   destroy: destroy
-});
-
-/***/ }),
-
-/***/ "./src/ui/js/load-file.js":
-/*!********************************!*\
-  !*** ./src/ui/js/load-file.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var changeHandler = function changeHandler(event) {
-  var input = event.target;
-  if (input.getAttribute('data-load-file') === null) return;
-  var type = input.getAttribute('data-load-type');
-  var targetId = input.getAttribute('data-load-target');
-
-  if (type === 'image') {
-    var target = document.getElementById(targetId);
-
-    if (target.getAttribute('data-initial') == null) {
-      target.setAttribute('data-initial', target.src);
-    }
-
-    var file = input.files[0];
-
-    if (file) {
-      var reader = new FileReader();
-      reader.addEventListener("load", function (event) {
-        target.src = event.target.result;
-      }, false);
-      reader.readAsDataURL(file);
-    } else {
-      target.src = target.getAttribute('data-initial');
-    }
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  init: function init() {
-    return document.addEventListener('change', changeHandler);
-  },
-  destroy: function destroy() {
-    return document.removeEventListener('change', changeHandler);
-  }
 });
 
 /***/ }),
@@ -529,165 +451,6 @@ var init = function init() {
 
 /***/ }),
 
-/***/ "./src/ui/js/ripple.js":
-/*!*****************************!*\
-  !*** ./src/ui/js/ripple.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _functions_getSupportedEvents__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/getSupportedEvents */ "./src/ui/js/functions/getSupportedEvents.js");
-
-var selectors = {
-  attached: [],
-  deAttached: []
-};
-
-var init = function init() {
-  document.addEventListener((0,_functions_getSupportedEvents__WEBPACK_IMPORTED_MODULE_0__["default"])().start, clickHandler);
-};
-
-var destroy = function destroy() {
-  document.removeEventListener((0,_functions_getSupportedEvents__WEBPACK_IMPORTED_MODULE_0__["default"])().start, clickHandler);
-};
-
-var attach = function attach(selector) {
-  selectors.deAttached = selectors.deAttached.filter(function (item) {
-    return item !== selector;
-  });
-  selectors.attached.push(selector);
-};
-
-var deAttach = function deAttach(selector) {
-  selectors.attached = selectors.attached.filter(function (item) {
-    return item !== selector;
-  });
-  selectors.deAttached.push(selector);
-};
-
-function clickHandler(event) {
-  var target = event.target;
-  var isMatch = false;
-
-  for (var i in selectors.attached) {
-    if (!Object.hasOwnProperty.call(selectors.attached, i)) continue;
-
-    if (event.target.matches(selectors.attached[i]) || event.target.closest(selectors.attached[i])) {
-      isMatch = true;
-      target = event.target.closest(selectors.attached[i]);
-      break;
-    }
-  }
-
-  for (var _i in selectors.deAttached) {
-    if (!Object.hasOwnProperty.call(selectors.deAttached, _i)) continue;
-
-    if (target.matches(selectors.deAttached[_i])) {
-      isMatch = false;
-      break;
-    }
-  }
-
-  if (!isMatch) return;
-  if (getComputedStyle(target).position == 'static') target.style.position = 'relative';
-  var rect = target.getBoundingClientRect();
-  var rippleWraps = target.querySelectorAll('.ripple-wrap');
-  var rippleWrap;
-  var ripple = target.querySelector('.ripple');
-
-  for (var _i2 in rippleWraps) {
-    if (!Object.hasOwnProperty.call(rippleWraps, _i2)) continue;
-    if (rippleWraps[_i2].parentElement == target) rippleWrap = rippleWraps[_i2];
-  }
-
-  if (!rippleWrap) {
-    rippleWrap = document.createElement('span');
-    rippleWrap.className = 'ripple-wrap';
-    target.appendChild(rippleWrap);
-  }
-
-  ripple = document.createElement('span');
-  ripple.className = 'ripple';
-  ripple.style.height = ripple.style.width = 2 * Math.max(rect.width, rect.height, 48) + 'px';
-  rippleWrap.appendChild(ripple);
-  var pageX = 0;
-  var pageY = 0;
-
-  if (event.pageY && event.pageX) {
-    pageX = event.pageX;
-    pageY = event.pageY;
-  }
-
-  if (event.touches) {
-    for (var _i3 in event.touches) {
-      if (!Object.hasOwnProperty.call(event.touches, _i3)) continue;
-
-      if (target.contains(event.touches[_i3].target) || target == event.touches[_i3].target) {
-        pageX = event.touches[_i3].pageX;
-        pageY = event.touches[_i3].pageY;
-        break;
-      }
-    }
-  }
-
-  var top = pageY - rect.top - ripple.offsetHeight / 2 - window.pageYOffset;
-  var left = pageX - rect.left - ripple.offsetWidth / 2 - window.pageXOffset;
-  ripple.style.top = top + 'px';
-  ripple.style.left = left + 'px';
-  ripple.classList.add('show');
-  var isAnimEnd = false;
-  ripple.addEventListener('animationend', function () {
-    return isAnimEnd = true;
-  }, {
-    once: true
-  });
-  target.style.userSelect = 'none';
-  var isRemoved = false;
-
-  var leaveHandler = function leaveHandler() {
-    target.style.userSelect = '';
-    ripple.classList.add('hide');
-
-    var remove = function remove() {
-      isRemoved = true;
-      setTimeout(function () {
-        var _ripple, _ripple$parentElement;
-
-        return (_ripple = ripple) === null || _ripple === void 0 ? void 0 : (_ripple$parentElement = _ripple.parentElement) === null || _ripple$parentElement === void 0 ? void 0 : _ripple$parentElement.removeChild(ripple);
-      }, 500);
-    };
-
-    if (isRemoved) return;
-    if (isAnimEnd) ripple.classList.add('removed');
-    if (isAnimEnd) remove();else ripple.addEventListener('animationend', remove, {
-      once: true
-    });
-  };
-
-  document.addEventListener((0,_functions_getSupportedEvents__WEBPACK_IMPORTED_MODULE_0__["default"])().end, leaveHandler, {
-    once: true
-  });
-  document.addEventListener('dragend', leaveHandler, {
-    once: true
-  });
-  document.addEventListener((0,_functions_getSupportedEvents__WEBPACK_IMPORTED_MODULE_0__["default"])().move, leaveHandler, {
-    once: true
-  });
-  return false;
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  init: init,
-  destroy: destroy,
-  attach: attach,
-  deAttach: deAttach
-});
-
-/***/ }),
-
 /***/ "./src/ui/js/show-pass.js":
 /*!********************************!*\
   !*** ./src/ui/js/show-pass.js ***!
@@ -803,348 +566,34 @@ function initTheme() {
 
 /***/ }),
 
-/***/ "./src/ui/js/ui--tab.js":
-/*!******************************!*\
-  !*** ./src/ui/js/ui--tab.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var attr = {
-  link: 'data-tab-link',
-  content: 'data-tab-content',
-  cover: 'data-tab-cover',
-  plate: 'data-tab-plate'
-};
-var activeClass = 'tab-active';
-
-function tabInit() {
-  var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.body;
-  var covers = container.querySelectorAll('[' + attr.cover + ']');
-
-  var _loop = function _loop(i) {
-    if (!covers.hasOwnProperty(i)) return "continue";
-    var cover = covers[i];
-
-    var contents = _toConsumableArray(cover.querySelectorAll('[' + attr.content + ']')).filter(function (item) {
-      return item.closest('[' + attr.cover + ']') == cover;
-    });
-
-    var links = _toConsumableArray(cover.querySelectorAll('[' + attr.link + ']')).filter(function (item) {
-      return item.closest('[' + attr.cover + ']') == cover;
-    });
-
-    var activeElement = contents.find(function (item) {
-      return item.classList.contains(activeClass);
-    }) || links.find(function (item) {
-      return item.classList.contains(activeClass);
-    }) || contents[0] || links[0];
-    var id = activeElement.getAttribute(attr.link) || activeElement.getAttribute(attr.content);
-    links.map(function (elem) {
-      elem.getAttribute(attr.link) != id ? elem.classList.remove(activeClass) : elem.classList.add(activeClass);
-    });
-    contents.map(function (elem) {
-      elem.getAttribute(attr.content) != id ? elem.classList.remove(activeClass) : elem.classList.add(activeClass);
-    });
-    var plate = cover.querySelector('[' + attr.plate + ']');
-    if (!plate || plate.closest('[' + attr.cover + ']') != cover) return "continue";
-    var firstActiveLink = cover.querySelector('[' + attr.link + '="' + id + '"]');
-    plate.style.left = firstActiveLink.offsetLeft + 'px';
-    plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
-  };
-
-  for (var i in covers) {
-    var _ret = _loop(i);
-
-    if (_ret === "continue") continue;
-  }
-}
-
-function tabOnClick(link) {
-  var id = link.getAttribute(attr.link);
-  var cover = link.closest('[' + attr.cover + ']');
-
-  var activeLink = _toConsumableArray(cover.querySelectorAll('[' + attr.link + '="' + id + '"]'));
-
-  var activecontent = _toConsumableArray(cover.querySelectorAll('[' + attr.content + '="' + id + '"]'));
-
-  var oldLink = _toConsumableArray(cover.querySelectorAll('[' + attr.link + '].' + activeClass));
-
-  var oldContent = _toConsumableArray(cover.querySelectorAll('[' + attr.content + '].' + activeClass));
-
-  oldLink ? oldLink.filter(function (item) {
-    return item.closest('[' + attr.cover + ']') == cover;
-  }).map(function (item) {
-    return item.classList.remove(activeClass);
-  }) : null;
-  oldContent ? oldContent.filter(function (item) {
-    return item.closest('[' + attr.cover + ']') == cover;
-  }).map(function (item) {
-    return item.classList.remove(activeClass);
-  }) : null;
-  activeLink ? activeLink.filter(function (item) {
-    return item.closest('[' + attr.cover + ']') == cover;
-  }).map(function (item) {
-    return item.classList.add(activeClass);
-  }) : null;
-  activecontent ? activecontent.filter(function (item) {
-    return item.closest('[' + attr.cover + ']') == cover;
-  }).map(function (item) {
-    return item.classList.add(activeClass);
-  }) : null;
-  var customEvent = new CustomEvent('tabchange', {
-    bubbles: true,
-    cancelable: true,
-    detail: {
-      target: cover,
-      cover: cover,
-      content: activecontent
-    }
-  });
-  cover.dispatchEvent(customEvent);
-  var plate = cover.querySelector('[' + attr.plate + ']');
-  if (!plate || plate.closest('[' + attr.cover + ']') != cover) return;
-  var firstActiveLink = activeLink[0];
-  plate.style.left = firstActiveLink.offsetLeft + 'px';
-  plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
-}
-
-var width = 0;
-
-function resizeHandler() {
-  width = document.body.clientWidth;
-  setTimeout(function () {
-    if (width != document.body.clientWidth) return;
-    var covers = document.querySelectorAll('[' + attr.cover + ']');
-
-    for (var i in covers) {
-      if (!covers.hasOwnProperty(i)) continue;
-      var cover = covers[i];
-      var plate = cover.querySelector('[' + attr.plate + ']');
-      if (!plate || plate.closest('[' + attr.cover + ']') != cover) continue;
-      var activeElement = cover.querySelector('[' + attr.link + '].' + activeClass) || cover.querySelector('[' + attr.content + '].' + activeClass) || cover.querySelector('[' + attr.link + ']');
-      var id = activeElement.getAttribute(attr.link) || activeElement.getAttribute(attr.content);
-      var firstActiveLink = cover.querySelector('[' + attr.link + '="' + id + '"]');
-      plate.style.left = firstActiveLink.offsetLeft + 'px';
-      plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
-    }
-  }, 250);
-}
-
-function clickHandler(event) {
-  var link = event.target.closest('[' + attr.link + ']');
-  if (link) tabOnClick(link);
-}
-
-var init = function init() {
-  tabInit();
-  document.removeEventListener('click', clickHandler);
-  window.removeEventListener('resize', resizeHandler);
-  document.addEventListener('click', clickHandler);
-  window.addEventListener('resize', resizeHandler);
-};
-
-var destroy = function destroy() {
-  document.removeEventListener('click', clickHandler);
-  window.removeEventListener('resize', resizeHandler);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  init: init,
-  destroy: destroy
-});
-
-/***/ }),
-
-/***/ "./src/ui/js/ui--toggle.js":
-/*!*********************************!*\
-  !*** ./src/ui/js/ui--toggle.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var attr = {
-  link: 'data-toggle-link',
-  cover: 'data-toggle-cover',
-  content: 'data-toggle-content',
-  coverHeight: 'data-toggle-height',
-  coverStatic: 'data-toggle-static'
-};
-var activeClass = 'toggle-active';
-
-function toggleInit() {
-  var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.body;
-  var covers = container.querySelectorAll('[data-toggle-height]');
-
-  for (var i in covers) {
-    if (!covers.hasOwnProperty(i)) continue;
-    var toggleCover = covers[i];
-    toggleCover.classList.add('no-transition');
-    setToggle(false, false, toggleCover);
-    toggleCover.classList.remove('no-transition');
-  }
-}
-
-function toggle(toggleId, toggleLink) {
-  var id = toggleLink ? toggleLink.getAttribute(attr.link) ? toggleLink.getAttribute(attr.link) : toggleId : toggleId;
-
-  if (!id) {
-    console.error('toggleId not found!');
-    return;
-  }
-
-  var toggleCover = document.getElementById(id) || (toggleLink ? toggleLink.closest('[' + attr.cover + ']').querySelector('[' + attr.content + ']') : null) || (toggleLink ? toggleLink.closest('[' + attr.cover + ']') : null);
-
-  if (!toggleCover) {
-    console.error('toggleCover not found!');
-    return;
-  }
-
-  toggleCover.classList.toggle(activeClass);
-  setToggle(toggleLink, id, toggleCover);
-}
-
-function setToggle(toggleLink, toggleId, toggleCover) {
-  var isActive = function isActive() {
-    return toggleCover.classList.contains(activeClass);
-  };
-
-  document.removeEventListener('click', hideOnClick);
-  !(toggleCover.getAttribute(attr.coverStatic) !== null) && isActive() ? document.addEventListener('click', hideOnClick) : null; // window.removeEventListener('scroll', hideOnScroll);
-  // !toggleCover.dataset.toggleStatic && isActive() ? window.addEventListener('scroll', hideOnScroll) : null;
-
-  if (toggleLink) isActive() ? toggleLink.classList.add(activeClass) : toggleLink.classList.remove(activeClass);
-  if (toggleCover.closest('[' + attr.cover + ']')) isActive() ? toggleCover.closest('[' + attr.cover + ']').classList.add(activeClass) : toggleCover.closest('[' + attr.cover + ']').classList.remove(activeClass);
-
-  var openHeight = function openHeight() {
-    var height = toggleCover.getAttribute(attr.coverHeight);
-
-    if (toggleCover.classList.contains('no-transition')) {
-      toggleCover.style.height = '';
-      toggleCover.style.overflow = 'visible';
-      return;
-    }
-
-    toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px';
-    toggleCover.style.transition = Math.max(toggleCover.scrollHeight / 2, 100) + 'ms ease';
-    setTimeout(function () {
-      return toggleCover.style.height = toggleCover.scrollHeight + 'px';
-    }, 10); // setTimeout(() => isActive() ? toggleCover.style.height = '' : null, 10 + toggleCover.scrollHeight);
-
-    setTimeout(function () {
-      return isActive() ? toggleCover.style.overflow = 'visible' : null;
-    }, 10 + toggleCover.scrollHeight / 2);
-  };
-
-  var closeHeight = function closeHeight() {
-    var height = toggleCover.getAttribute(attr.coverHeight);
-
-    if (toggleCover.classList.contains('no-transition')) {
-      toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px';
-      toggleCover.style.overflow = 'hidden';
-      return;
-    }
-
-    toggleCover.style.transition = Math.max(toggleCover.scrollHeight / 2, 100) + 'ms ease';
-    toggleCover.style.height = toggleCover.scrollHeight + 'px';
-    toggleCover.style.overflow = 'hidden';
-    setTimeout(function () {
-      return toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px';
-    }, 10);
-  };
-
-  if (toggleCover.getAttribute(attr.coverHeight) !== null && isActive()) openHeight();
-  if (toggleCover.getAttribute(attr.coverHeight) !== null && !isActive()) closeHeight();
-
-  if (!isActive()) {
-    var links = document.querySelectorAll('[' + attr.link + '=' + toggleId + '].' + activeClass);
-
-    for (var i in links) {
-      if (!links.hasOwnProperty(i)) continue;
-      links[i].classList.remove(activeClass);
-    }
-  }
-
-  var isChild = function isChild(child, parent) {
-    return child === parent || parent.contains(child);
-  };
-
-  function hideOnClick(event) {
-    var onCover = isChild(event.target, toggleCover);
-    var onLink = toggleLink ? isChild(event.target, toggleLink) : false;
-    if (onCover) return;
-    if (onLink) return;
-    isActive() ? toggle(toggleId, toggleLink) : null;
-    document.removeEventListener('click', hideOnClick);
-  }
-
-  var observer = new MutationObserver(function () {
-    if (!isActive()) {
-      document.removeEventListener('click', hideOnClick);
-      observer.disconnect();
-    }
-  });
-  observer.observe(toggleCover, {
-    attributes: true
-  });
-  var eventType = isActive() ? 'toggleopen' : 'toggleclose';
-  var customEvent = new CustomEvent(eventType, {
-    bubbles: true,
-    cancelable: true,
-    detail: {
-      target: toggleCover,
-      link: toggleLink
-    }
-  });
-  toggleCover.dispatchEvent(customEvent);
-  if (toggleLink) toggleLink.dispatchEvent(customEvent);
-}
-
-function onClick(event) {
-  var link = event.target.closest('[' + attr.link + ']');
-  if (link) toggle(null, link);
-}
-
-var init = function init() {
-  toggleInit();
-  document.removeEventListener('click', onClick);
-  document.addEventListener('click', onClick);
-};
-
-var destroy = function destroy() {
-  document.removeEventListener('click', onClick);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  init: init,
-  destroy: destroy,
-  toggle: toggle
-});
-
-/***/ }),
-
 /***/ "./node_modules/@fancyapps/ui/dist/fancybox.css":
 /*!******************************************************!*\
   !*** ./node_modules/@fancyapps/ui/dist/fancybox.css ***!
   \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./node_modules/npm-kit-ripple/index.css":
+/*!***********************************************!*\
+  !*** ./node_modules/npm-kit-ripple/index.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/scss/frontend--fonts.scss":
+/*!***************************************!*\
+  !*** ./src/scss/frontend--fonts.scss ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1210,6 +659,516 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./node_modules/npm-kit-ripple/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/npm-kit-ripple/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+let selectors = { attached: [], deAttached: [] }
+
+const getSupportedEvents = function () {
+  let support = {
+    pointer: !!("PointerEvent" in window || ("msPointerEnabled" in window.navigator)),
+    touch: !!(typeof window.orientation !== "undefined" || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || "ontouchstart" in window || navigator.msMaxTouchPoints || "maxTouchPoints" in window.navigator > 1 || "msMaxTouchPoints" in window.navigator > 1)
+  };
+  return support.touch ?
+    { type: 'touch', start: "touchstart", end: "touchend", cancel: "touchcancel", move:"touchmove" } :
+    { type: 'mouse', start: "mousedown", end: "mouseup", cancel: "mouseleave", move:"mousemove" }
+};
+
+const init = () => {
+  document.addEventListener(getSupportedEvents().start, clickHandler)
+}
+
+const destroy = () => {
+  document.removeEventListener(getSupportedEvents().start, clickHandler)
+}
+
+const attach = (selector) => {
+  selectors.deAttached = selectors.deAttached.filter((item) => item !== selector)
+  selectors.attached.push(selector)
+}
+
+const deAttach = (selector) => {
+  selectors.attached = selectors.attached.filter((item) => item !== selector)
+  selectors.deAttached.push(selector)
+}
+
+function clickHandler(event) {
+  let target = event.target;
+  let isMatch = false
+
+  for (const i in selectors.attached) {
+    if (!Object.hasOwnProperty.call(selectors.attached, i)) continue
+    if (event.target.matches(selectors.attached[i]) || event.target.closest(selectors.attached[i])) {
+      isMatch = true
+      target = event.target.closest(selectors.attached[i])
+      break
+    }
+  }
+  for (const i in selectors.deAttached) {
+    if (!Object.hasOwnProperty.call(selectors.deAttached, i)) continue
+    if (target.matches(selectors.deAttached[i])) {
+      isMatch = false
+      break
+    }
+  }
+  if (!isMatch) return
+
+  if (getComputedStyle(target).position == 'static') target.style.position = 'relative'
+
+  let rect = target.getBoundingClientRect();
+  let rippleWraps = target.querySelectorAll('.ripple-wrap');
+  let rippleWrap;
+  let ripple = target.querySelector('.ripple');
+
+  for (const i in rippleWraps) {
+    if (!Object.hasOwnProperty.call(rippleWraps, i)) continue
+    if (rippleWraps[i].parentElement == target) rippleWrap = rippleWraps[i]
+  }
+
+  if (!rippleWrap) {
+    rippleWrap = document.createElement('span');
+    rippleWrap.className = 'ripple-wrap';
+    target.appendChild(rippleWrap);
+  }
+
+  ripple = document.createElement('span');
+  ripple.className = 'ripple';
+  ripple.style.height = ripple.style.width = 2 * Math.max(rect.width, rect.height, 48) + 'px';
+  rippleWrap.appendChild(ripple);
+
+  let pageX = 0;
+  let pageY = 0;
+
+  if (event.pageY && event.pageX) {
+    pageX = event.pageX;
+    pageY = event.pageY;
+  }
+
+  if (event.touches) {
+    for (const i in event.touches) {
+      if (!Object.hasOwnProperty.call(event.touches, i)) continue
+      if (target.contains(event.touches[i].target) || target == event.touches[i].target) {
+        pageX = event.touches[i].pageX;
+        pageY = event.touches[i].pageY;
+        break
+      }
+    }
+  }
+
+  let top = pageY - rect.top - ripple.offsetHeight / 2 - window.pageYOffset;
+  let left = pageX - rect.left - ripple.offsetWidth / 2 - window.pageXOffset;
+  ripple.style.top = top + 'px';
+  ripple.style.left = left + 'px';
+  ripple.classList.add('show');
+
+  let isAnimEnd = false
+  ripple.addEventListener('animationend', () => isAnimEnd = true, { once: true });
+
+  target.style.userSelect = 'none'
+  let isRemoved = false
+
+
+  const leaveHandler = () => {
+    target.style.userSelect = ''
+    ripple.classList.add('hide');
+
+    const remove = () => {
+      isRemoved = true
+      setTimeout(() => ripple.parentElement.removeChild(ripple), 500)
+    }
+
+    if (isRemoved) return
+    if (isAnimEnd) ripple.classList.add('removed');
+    if (isAnimEnd) remove()
+    else ripple.addEventListener('animationend', remove, { once: true });
+
+  }
+  
+  document.addEventListener(getSupportedEvents().end, leaveHandler, { once: true })
+  document.addEventListener('dragend', leaveHandler, { once: true })
+  document.addEventListener(getSupportedEvents().move, leaveHandler, { once: true })
+
+  return false;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({ init, destroy, attach, deAttach });
+
+/***/ }),
+
+/***/ "./node_modules/npm-kit-tab/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/npm-kit-tab/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+const attr = {
+	link: 'data-tab-link',
+	content: 'data-tab-content',
+	cover: 'data-tab-cover',
+	plate: 'data-tab-plate',
+	activeClass: 'tab-active'
+}
+
+
+function tabInit(container = document.body) {
+	const covers = container.querySelectorAll('[' + attr.cover + ']');
+
+
+	for (let i in covers) {
+		if (!covers.hasOwnProperty(i)) continue;
+
+		const cover = covers[i];
+		const contents = [...cover.querySelectorAll('[' + attr.content + ']')]
+			.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+		const links = [...cover.querySelectorAll('[' + attr.link + ']')]
+			.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+
+		const activeElement =
+			contents.find((item) => item.classList.contains(attr.activeClass)) ||
+			links.find((item) => item.classList.contains(attr.activeClass)) ||
+			contents[0] ||
+			links[0];
+
+
+		const id = activeElement.getAttribute(attr.link) || activeElement.getAttribute(attr.content);
+
+		links.map((elem) => {
+			elem.getAttribute(attr.link) != id ?
+				elem.classList.remove(attr.activeClass) :
+				elem.classList.add(attr.activeClass);
+		})
+
+		contents.map((elem) => {
+			elem.getAttribute(attr.content) != id ?
+				elem.classList.remove(attr.activeClass) :
+				elem.classList.add(attr.activeClass);
+		})
+
+
+		const plate = cover.querySelector('[' + attr.plate + ']');
+		if (!plate || plate.closest('[' + attr.cover + ']') != cover) continue;
+		const firstActiveLink = cover.querySelector('[' + attr.link + '="' + id + '"]');
+		plate.style.left = firstActiveLink.offsetLeft + 'px';
+		plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
+	}
+
+
+
+}
+
+function tabOnClick(link) {
+
+	const id = link.getAttribute(attr.link);
+	const cover = link.closest('[' + attr.cover + ']');
+
+	const activeLink = [...cover.querySelectorAll('[' + attr.link + '="' + id + '"]')];
+	const activecontent = [...cover.querySelectorAll('[' + attr.content + '="' + id + '"]')];
+
+	const oldLink = [...cover.querySelectorAll('[' + attr.link + '].' + attr.activeClass)];
+	const oldContent = [...cover.querySelectorAll('[' + attr.content + '].' + attr.activeClass)];
+
+
+	oldLink ? oldLink
+		.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+		.map((item) => item.classList.remove(attr.activeClass)) : null;
+	oldContent ? oldContent
+		.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+		.map((item) => item.classList.remove(attr.activeClass)) : null;
+
+
+	activeLink ? activeLink
+		.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+		.map((item) => item.classList.add(attr.activeClass)) : null;
+	activecontent ? activecontent
+		.filter((item) => item.closest('[' + attr.cover + ']') == cover)
+		.map((item) => item.classList.add(attr.activeClass)) : null;
+
+
+
+	const customEvent = new CustomEvent('tabchange', {
+		bubbles: true,
+		cancelable: true,
+		detail: {
+			target: cover,
+			cover: cover,
+			content: activecontent
+		}
+	});
+
+
+	cover.dispatchEvent(customEvent);
+
+
+	const plate = cover.querySelector('[' + attr.plate + ']');
+	if (!plate || plate.closest('[' + attr.cover + ']') != cover) return;
+	const firstActiveLink = activeLink[0];
+	plate.style.left = firstActiveLink.offsetLeft + 'px';
+	plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
+}
+
+let width = 0
+
+function resizeHandler() {
+	width = document.body.clientWidth
+	setTimeout(() => {
+		if (width != document.body.clientWidth) return;
+		const covers = document.querySelectorAll('[' + attr.cover + ']');
+
+		for (let i in covers) {
+			if (!covers.hasOwnProperty(i)) continue;
+
+			const cover = covers[i];
+			const plate = cover.querySelector('[' + attr.plate + ']');
+			if (!plate || plate.closest('[' + attr.cover + ']') != cover) continue;
+
+			const activeElement =
+				cover.querySelector('[' + attr.link + '].' + attr.activeClass) ||
+				cover.querySelector('[' + attr.content + '].' + attr.activeClass) ||
+				cover.querySelector('[' + attr.link + ']');
+
+			const id = activeElement.getAttribute(attr.link) || activeElement.getAttribute(attr.content);
+
+			const firstActiveLink = cover.querySelector('[' + attr.link + '="' + id + '"]');
+			plate.style.left = firstActiveLink.offsetLeft + 'px';
+			plate.style.width = firstActiveLink.getBoundingClientRect().width + 'px';
+		}
+	}, 250)
+}
+
+function clickHandler(event) {
+	const link = event.target.closest('[' + attr.link + ']');
+	if (link) tabOnClick(link);
+}
+
+const init = () => {
+
+	tabInit();
+
+
+	document.removeEventListener('click', clickHandler)
+	window.removeEventListener('resize', resizeHandler);
+	document.addEventListener('click', clickHandler)
+	window.addEventListener('resize', resizeHandler);
+
+}
+
+const destroy = () => {
+	document.removeEventListener('click', clickHandler)
+	window.removeEventListener('resize', resizeHandler);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({ init, destroy });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/npm-kit-toggle/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/npm-kit-toggle/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+const attr = {
+	link: 'data-toggle-link',
+	cover: 'data-toggle-cover',
+	content: 'data-toggle-content',
+	coverHeight: 'data-toggle-height',
+	coverStatic: 'data-toggle-static',
+	activeClass: 'toggle-active'
+}
+
+
+
+
+
+
+function toggleInit(container = document.body) {
+	const covers = container.querySelectorAll('[data-toggle-height]');
+
+	for (const i in covers) {
+		if (!covers.hasOwnProperty(i)) continue;
+
+		const toggleCover = covers[i];
+		toggleCover.classList.add('no-transition');
+		setToggle(false, false, toggleCover);
+		toggleCover.classList.remove('no-transition');
+
+	}
+}
+
+function toggle(toggleId, toggleLink) {
+	const id = toggleLink ? (toggleLink.getAttribute(attr.link) ? toggleLink.getAttribute(attr.link) : toggleId) : toggleId;
+
+
+	if (!id) {
+		console.error('toggleId not found!');
+		return;
+	}
+
+	const toggleCover = document.getElementById(id) ||
+		(toggleLink ? toggleLink.closest('[' + attr.cover + ']').querySelector('[' + attr.content + ']') : null) ||
+		(toggleLink ? toggleLink.closest('[' + attr.cover + ']') : null);
+
+
+
+	if (!toggleCover) {
+		console.error('toggleCover not found!');
+		return;
+	}
+
+	toggleCover.classList.toggle(attr.activeClass);
+
+	setToggle(toggleLink, id, toggleCover);
+}
+
+function setToggle(toggleLink, toggleId, toggleCover) {
+
+	const isActive = () => toggleCover.classList.contains(attr.activeClass);
+
+	document.removeEventListener('click', hideOnClick);
+	!(toggleCover.getAttribute(attr.coverStatic) !== null) && isActive() ? document.addEventListener('click', hideOnClick) : null;
+
+	// window.removeEventListener('scroll', hideOnScroll);
+	// !toggleCover.dataset.toggleStatic && isActive() ? window.addEventListener('scroll', hideOnScroll) : null;
+
+
+	if (toggleLink)
+		isActive() ?
+			toggleLink.classList.add(attr.activeClass) :
+			toggleLink.classList.remove(attr.activeClass);
+
+
+	if (toggleCover.closest('[' + attr.cover + ']'))
+		isActive() ?
+			toggleCover.closest('[' + attr.cover + ']').classList.add(attr.activeClass) :
+			toggleCover.closest('[' + attr.cover + ']').classList.remove(attr.activeClass);
+
+
+	const openHeight = () => {
+		const height = toggleCover.getAttribute(attr.coverHeight);
+		if (toggleCover.classList.contains('no-transition')) {
+			toggleCover.style.height = ''
+			toggleCover.style.overflow = 'visible'
+			return
+		}
+
+		toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px';
+		toggleCover.style.transition = Math.max(toggleCover.scrollHeight / 2, 100) + 'ms ease';
+		setTimeout(() => toggleCover.style.height = toggleCover.scrollHeight + 'px', 10);
+		// setTimeout(() => isActive() ? toggleCover.style.height = '' : null, 10 + toggleCover.scrollHeight);
+		setTimeout(() => isActive() ? toggleCover.style.overflow = 'visible' : null, 10 + toggleCover.scrollHeight / 2);
+	}
+	const closeHeight = () => {
+		const height = toggleCover.getAttribute(attr.coverHeight);
+		if (toggleCover.classList.contains('no-transition')) {
+			toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px'
+			toggleCover.style.overflow = 'hidden';
+			return
+		}
+		toggleCover.style.transition = Math.max(toggleCover.scrollHeight / 2, 100) + 'ms ease';
+		toggleCover.style.height = toggleCover.scrollHeight + 'px';
+		toggleCover.style.overflow = 'hidden';
+		setTimeout(() => toggleCover.style.height = isNaN(parseInt(height)) ? '0px' : parseInt(height) + 'px', 10);
+	}
+
+	if (toggleCover.getAttribute(attr.coverHeight) !== null && isActive()) openHeight()
+	if (toggleCover.getAttribute(attr.coverHeight) !== null && !isActive()) closeHeight();
+
+
+
+
+
+	if (!isActive()) {
+		const links = document.querySelectorAll('[' + attr.link + '=' + toggleId + '].' + attr.activeClass);
+		for (const i in links) {
+			if (!links.hasOwnProperty(i)) continue;
+			links[i].classList.remove(attr.activeClass);
+		}
+	}
+
+
+
+
+	const isChild = (child, parent) => child === parent || parent.contains(child);
+
+	function hideOnClick(event) {
+		const onCover = isChild(event.target, toggleCover);
+		const onLink = toggleLink ? isChild(event.target, toggleLink) : false;
+
+		if (onCover) return;
+		if (onLink) return;
+
+		isActive() ? toggle(toggleId, toggleLink) : null;
+		document.removeEventListener('click', hideOnClick);
+
+	}
+
+	let observer = new MutationObserver(() => {
+		if (!isActive()) {
+			document.removeEventListener('click', hideOnClick);
+			observer.disconnect();
+		}
+	});
+	observer.observe(toggleCover, {
+		attributes: true
+	});
+
+	var eventType = isActive() ? 'toggleopen' : 'toggleclose';
+	var customEvent = new CustomEvent(eventType, {
+		bubbles: true,
+		cancelable: true,
+		detail: {
+			target: toggleCover,
+			link: toggleLink
+		}
+	});
+
+
+	toggleCover.dispatchEvent(customEvent);
+	if (toggleLink) toggleLink.dispatchEvent(customEvent);
+}
+
+function onClick(event) {
+	const link = event.target.closest('[' + attr.link + ']');
+	if (link) toggle(null, link);
+}
+
+
+const init = () => {
+
+	toggleInit();
+
+	document.removeEventListener('click', onClick);
+	document.addEventListener('click', onClick);
+
+}
+
+const destroy = () => {
+	document.removeEventListener('click', onClick);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({ attr, init, destroy, toggle });
 
 /***/ }),
 
@@ -13753,7 +13712,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_ui_reset_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/ui-reset.scss */ "./src/ui/ui-reset.scss");
 /* harmony import */ var _ui_ui_core_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/ui-core.scss */ "./src/ui/ui-core.scss");
 /* harmony import */ var _ui_ui_example_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/ui-example.scss */ "./src/ui/ui-example.scss");
-/* harmony import */ var _scss_frontend_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scss/frontend--style.scss */ "./src/scss/frontend--style.scss");
+/* harmony import */ var _scss_frontend_fonts_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scss/frontend--fonts.scss */ "./src/scss/frontend--fonts.scss");
+/* harmony import */ var _scss_frontend_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scss/frontend--style.scss */ "./src/scss/frontend--style.scss");
+
 
 
 
