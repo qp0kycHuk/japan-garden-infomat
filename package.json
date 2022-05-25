@@ -1,6 +1,6 @@
 {
   "name": "krd-kit-ui",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -34,10 +34,10 @@
     }
   },
   "dependencies": {
-    "@fancyapps/ui": "^4.0.17",
-    "npm-kit-ripple": "^1.0.1",
+    "@fancyapps/ui": "^4.0.27",
+    "npm-kit-ripple": "^1.0.2",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.0.0",
-    "swiper": "^7.4.1"
+    "swiper": "^8.1.5"
   }
 }

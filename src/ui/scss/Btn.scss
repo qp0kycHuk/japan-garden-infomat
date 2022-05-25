@@ -18,7 +18,7 @@
 .btn {
 	--btn-color-light: var(--color-text-20);
 	--btn-color      : var(--color-text);
-	--btn-text       : #fff;
+	--btn-text       : var(--bg3);
 
 	background : none;
 	border     : none;
