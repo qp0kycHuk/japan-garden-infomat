@@ -37,7 +37,7 @@
     "@fancyapps/ui": "^4.0.27",
     "npm-kit-ripple": "^1.0.2",
     "npm-kit-tab": "^1.0.0",
-    "npm-kit-toggle": "^1.0.0",
-    "swiper": "^8.1.5"
+    "npm-kit-toggle": "^1.0.5",
+    "swiper": "^8.2.4"
   }
 }
