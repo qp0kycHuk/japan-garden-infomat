@@ -10,6 +10,9 @@ const htmlWebpackPluginDefaults = {
   inject: 'head'
 }
 
+const pages = ['index.html', 'ui.html']
+const dialogs = ['dialog-large.html', 'dialog-middle.html', 'dialog-small.html']
+
 module.exports = {
   entry: './src/index.js',
   resolve: {
@@ -54,23 +57,18 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "style.css", }),
-    new HtmlWebpackPlugin({
-      ...htmlWebpackPluginDefaults,
-      template: './src/index.html',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      ...htmlWebpackPluginDefaults,
-      template: './src/ui.html',
-      filename: 'ui.html'
-    }),
+    new MiniCssExtractPlugin({ filename: "css/style.css", }),
+    ...pages.map((name) =>
+      new HtmlWebpackPlugin({
+        ...htmlWebpackPluginDefaults,
+        template: `./src/${name}`,
+        filename: name
+      })
+    ),
     new CopyPlugin({
       patterns: [
         { from: "./src/img/", to: "./img/" },
-        { from: "./src/dialog-small.html", to: "./dialog-small.html" },
-        { from: "./src/dialog-middle.html", to: "./dialog-middle.html" },
-        { from: "./src/dialog-large.html", to: "./dialog-large.html" },
+        ...dialogs.map((name) => ({ from: `./src/${name}`, to: `./${name}` }))
       ],
     }),
   ],
