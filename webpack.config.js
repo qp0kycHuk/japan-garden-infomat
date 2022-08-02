@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
+const fs = require('fs');
 
 const PUBLIC_PATH = path.resolve(__dirname, 'dist')
 
@@ -10,8 +11,34 @@ const htmlWebpackPluginDefaults = {
   inject: 'head'
 }
 
-const pages = ['index.html', 'ui.html']
-const dialogs = ['dialog-large.html', 'dialog-middle.html', 'dialog-small.html']
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    if (extension !== 'html') return null;
+
+    return new HtmlWebpackPlugin({
+      ...htmlWebpackPluginDefaults,
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+
+    })
+  }).filter((item) => item !== null)
+}
+
+function generateCopyPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    if (extension !== 'html') return null;
+
+    return { from: `${templateDir}/${name}.${extension}`, to: `./${name}.${extension}` }
+  }).filter((item) => item !== null)
+}
 
 module.exports = {
   entry: './src/index.js',
@@ -23,7 +50,7 @@ module.exports = {
   },
   output: {
     path: PUBLIC_PATH,
-    filename: 'index.js',
+    filename: 'js/index.js',
   },
   devtool: "source-map",
   module: {
@@ -53,22 +80,21 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      }
+      },
+      {
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'src/html-includes'),
+        use: ['raw-loader']
+      },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "css/style.css", }),
-    ...pages.map((name) =>
-      new HtmlWebpackPlugin({
-        ...htmlWebpackPluginDefaults,
-        template: `./src/${name}`,
-        filename: name
-      })
-    ),
+    ...generateHtmlPlugins('./src'),
     new CopyPlugin({
       patterns: [
         { from: "./src/img/", to: "./img/" },
-        ...dialogs.map((name) => ({ from: `./src/${name}`, to: `./${name}` }))
+        ...generateCopyPlugins('./src/html-dialogs')
       ],
     }),
   ],
