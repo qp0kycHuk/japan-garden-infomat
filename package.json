@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.27",
-    "intl-tel-input": "^17.0.16",
     "npm-kit-ripple": "^1.5.6",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.1.0",

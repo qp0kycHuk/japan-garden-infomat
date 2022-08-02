@@ -38,14 +38,4 @@ function loadHandler() {
 	ripple.attach('.waved')
 	ripple.deAttach('.btn--link')
 
-
-	const input = document.querySelector("[data-international-phone]");
-	intlTelInput(input, {
-		utilsScript: '../../build/js/utils.js',
-		nationalMode: true,
-		separateDialCode: true,
-		customContainer: 'w-100 flex',
-		initialCountry: 'ru'
-
-	});
 }
