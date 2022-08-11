@@ -2,53 +2,51 @@
 @import './_variables.scss';
 
 .card {
-	background       : var(--bg3);
-	box-sizing       : border-box;
-	border-radius    : var(--radius-middle);
-	position         : relative;
-	display          : flex;
-	flex-direction   : column;
+	background    : var(--bg3);
+	box-sizing    : border-box;
+	border-radius : var(--radius-middle);
+	position      : relative;
+	display       : flex;
+	flex-direction: column;
 
-	box-shadow: rgb(0 0 0 / 15%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
 
-	&--bordered {
-		border    : 1px solid var(--color-text-20);
-		box-shadow: none;
+	&--shadow {
+		box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.05);
+	}
+
+	&--contur {
+		border: 1px solid var(--color-text-20);
 	}
 
 	&-action {
-		&:before {
-			content       : '';
-			position      : absolute;
-			left          : 0;
-			top           : 0;
-			width         : 100%;
-			height        : 100%;
-			background    : var(--color-text);
-			opacity       : 0;
-			pointer-events: none;
-			transition    : .2s;
-			z-index       : 3;
-			border-radius : inherit;
-		}
+		transition: .3s ease;
 
 		@media(hover) {
-			&:hover:before {
-				opacity: .06;
+			&:hover {
+				box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
 			}
+		}
+
+		&:focus,
+		&:active {
+			box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+		}
+
+		&:active {
+			transform: translateY(2px);
 		}
 	}
 
 
 
 	&-img {
-		border-radius   : var(--radius-middle) var(--radius-middle) 0 0;
-		overflow        : hidden;
-		position        : relative;
-		max-height      : 278px;
-		min-height      : 128px;
-		overflow        : hidden;
-		width           : 100%;
+		border-radius: var(--radius-middle) var(--radius-middle) 0 0;
+		overflow     : hidden;
+		position     : relative;
+		max-height   : 278px;
+		min-height   : 128px;
+		overflow     : hidden;
+		width        : 100%;
 
 		&:before {
 			content       : '';
@@ -92,4 +90,28 @@
 		width   : 100%;
 		z-index : 2;
 	}
+}
+
+[data-theme="dark"] .card {
+	box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.25);
+
+	&-action {
+		transition: .3s ease;
+
+		@media(hover) {
+			&:hover {
+				box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.35);
+			}
+		}
+
+		&:focus,
+		&:active {
+			box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.35);
+		}
+
+		&:active {
+			transform: translateY(2px);
+		}
+	}
+
 }
