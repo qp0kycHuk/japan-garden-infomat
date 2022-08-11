@@ -31,13 +31,13 @@ section {
 
 @media (min-width: $md) {
   :root {
-    --section-width: 650px;
+    --section-width: #{$container_md};
   }
 }
 
 
 @media (min-width: $lg) {
   :root {
-    --section-width: 1024px;
+    --section-width: #{$container_lg};
   }
 }
