@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'ALS Schlange sans';
+    src: url('ALSSchlangesans-Bold.eot');
+    src: local('ALS Schlange sans Bold'), local('ALSSchlangesans-Bold'),
+        url('ALSSchlangesans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ALSSchlangesans-Bold.woff2') format('woff2'),
+        url('ALSSchlangesans-Bold.woff') format('woff'),
+        url('ALSSchlangesans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ALS Schlange sans';
+    src: url('ALSSchlangesans-Black.eot');
+    src: local('ALS Schlange sans Black'), local('ALSSchlangesans-Black'),
+        url('ALSSchlangesans-Black.eot?#iefix') format('embedded-opentype'),
+        url('ALSSchlangesans-Black.woff2') format('woff2'),
+        url('ALSSchlangesans-Black.woff') format('woff'),
+        url('ALSSchlangesans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ALS Schlange sans';
+    src: url('ALSSchlangesans-Light.eot');
+    src: local('ALS Schlange sans Light'), local('ALSSchlangesans-Light'),
+        url('ALSSchlangesans-Light.eot?#iefix') format('embedded-opentype'),
+        url('ALSSchlangesans-Light.woff2') format('woff2'),
+        url('ALSSchlangesans-Light.woff') format('woff'),
+        url('ALSSchlangesans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ALS Schlange sans';
+    src: url('ALSSchlangesans-Thin.eot');
+    src: local('ALS Schlange sans Thin'), local('ALSSchlangesans-Thin'),
+        url('ALSSchlangesans-Thin.eot?#iefix') format('embedded-opentype'),
+        url('ALSSchlangesans-Thin.woff2') format('woff2'),
+        url('ALSSchlangesans-Thin.woff') format('woff'),
+        url('ALSSchlangesans-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ALS Schlange sans';
+    src: url('ALSSchlangesans.eot');
+    src: local('ALS Schlange sans'), local('ALSSchlangesans'),
+        url('ALSSchlangesans.eot?#iefix') format('embedded-opentype'),
+        url('ALSSchlangesans.woff2') format('woff2'),
+        url('ALSSchlangesans.woff') format('woff'),
+        url('ALSSchlangesans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

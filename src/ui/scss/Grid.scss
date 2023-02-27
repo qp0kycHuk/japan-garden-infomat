@@ -7,14 +7,14 @@
 		width    : calc(1 * 100% / 12)
 	}
 
-	&-1-5 {
-		min-width: calc(1.5 * 100% / 12);
-		width    : calc(1.5 * 100% / 12)
-	}
-
 	&-2 {
 		min-width: calc(2 * 100% / 12);
 		width    : calc(2 * 100% / 12)
+	}
+
+	&-2_4 {
+		min-width: calc(2.4 * 100% / 12);
+		width    : calc(2.4 * 100% / 12)
 	}
 
 	&-3 {
@@ -117,22 +117,24 @@
 
 .grid {
 	--gap       : calc(var(--spacing) * 3);
+	--gap-x     : calc(var(--spacing) * 3);
+	--gap-y     : calc(var(--spacing) * 3);
 	display     : flex;
 	flex-wrap   : wrap;
-	margin-left : calc(-1 * var(--gap) / 2);
-	margin-right: calc(-1 * var(--gap) / 2);
-	margin-top  : calc(-1 * var(--gap));
+	margin-left : calc(-1 * var(--gap-x) / 2);
+	margin-right: calc(-1 * var(--gap-x) / 2);
+	margin-top  : calc(-1 * var(--gap-y));
 
-	min-width: calc(100% + var(--gap));
-	width    : calc(100% + var(--gap));
+	min-width: calc(100% + var(--gap-x));
+	width    : calc(100% + var(--gap-x));
 
 	&-wrap {
-		margin-left : calc(-1 * var(--gap) / 2);
-		margin-right: calc(-1 * var(--gap) / 2);
-		margin-top  : calc(-1 * var(--gap));
+		margin-left : calc(-1 * var(--gap-x) / 2);
+		margin-right: calc(-1 * var(--gap-x) / 2);
+		margin-top  : calc(-1 * var(--gap-y));
 
-		min-width: calc(100% + var(--gap));
-		width    : calc(100% + var(--gap));
+		min-width: calc(100% + var(--gap-x));
+		width    : calc(100% + var(--gap-x));
 	}
 
 	&-wrapper {
@@ -148,19 +150,19 @@
 	&-col {
 		width: 100%;
 
-		@include AddMedia {
-			@include GridCol;
+		// @include AddMedia {
+		@include GridCol;
 
-		}
+		// }
 
 	}
 
 
 	&-spacing {
-		@include AddMedia {
-			@include GridSpasing;
+		// @include AddMedia {
+		@include GridSpasing;
 
-		}
+		// }
 
 	}
 
@@ -169,9 +171,9 @@
 }
 
 [class*="grid-col"] {
-	padding-left : calc(var(--gap) / 2);
-	padding-right: calc(var(--gap) / 2);
-	margin-top   : var(--gap);
+	padding-left : calc(var(--gap-x) / 2);
+	padding-right: calc(var(--gap-x) / 2);
+	margin-top   : var(--gap-y);
 	box-sizing   : border-box;
 
 }

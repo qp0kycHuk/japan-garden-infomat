@@ -27,7 +27,9 @@
     "sass-loader": "^12.6.0",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "vue-loader": "^17.0.0",
+    "vue-tsc": "^0.39.5"
   },
   "postcss": {
     "plugins": {
@@ -36,10 +38,8 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.27",
-    "inputmask": "^5.0.7",
     "npm-kit-ripple": "^1.5.6",
-    "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.1.0",
-    "swiper": "^8.2.4"
+    "vue": "^3.2.36"
   }
 }
