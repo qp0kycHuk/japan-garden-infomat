@@ -20,7 +20,7 @@ const pages = {
 	main: 'page-main'
 }
 
-let currentPage = pages.main;
+let currentPage = pages.started;
 
 let mapPanzoom;
 const baseScale = 1;
