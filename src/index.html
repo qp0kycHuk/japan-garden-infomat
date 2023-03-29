@@ -55,7 +55,11 @@
         Вода — второй важнейший компонент сада. Поэтому особое значение придаётся водоёмам, их формам и направлению
         течения.
 
-
+        <div class="flex mt-10">
+          <button class="btn btn--sec btn--fill qr-btn" data-toggle-link="map-dialog--qr">
+            Получить QR-код
+          </button>
+        </div>
       </div>
       <div class="map" id="map">
         <div class="map-arrow">
@@ -98,7 +102,25 @@
         </div>
 
         <map-dialog v-for="item in items" :item="item"></map-dialog>
+        <div class="map-dialog map-dialog--qr " id="map-dialog--qr">
+          <div class="place-card">
+            <div class="map-dialog--qr-img">
+              <img src="img/lk-qr.png" alt="">
+            </div>
+            <div class="place-card__content">
+              <div class="place-card__title">Отсканируйте QR-код для входа</div>
 
+              <div class="place-card__description">
+                1. Отсканируйте QR-код<br>
+                2. Перейдите в личный кабинет<br>
+                3. Получите QR-код для посещения
+              </div>
+            </div>
+            <button class="place-card__close btn btn--primary btn--white-bg btn-fab" data-toggle-link="map-dialog--qr">
+              <img src="img/cross.svg" alt="">
+            </button>
+          </div>
+        </div>
       </div>
       <div class="footer">
         <button class="footer__btn btn btn--contur btn--primary" data-route-to="page-with-rules">
@@ -297,7 +319,7 @@
                 <div class="rules-item__content">
                   <div class="rules-item__title">
                     Вход и выход для <br>
-                    маломобильных <br> граждан 
+                    маломобильных <br> граждан
                     возможен <br> через входную
                     группу
                   </div>

@@ -229,6 +229,7 @@ body {
 		background: linear-gradient(360deg, #FFFFFF 65.94%, rgba(255, 255, 255, 0) 130.87%);
 		transition: .75s ease;
 		opacity: 0;
+		pointer-events: none;
 	}
 
 	&.active {
@@ -314,6 +315,7 @@ body {
 			transition: .5s;
 		}
 
+		&.toggle-active,
 		&.active {
 			opacity: 1;
 			pointer-events: all;
@@ -850,3 +852,24 @@ body {
 }
 
 .page-main {}
+
+.qr-btn {
+	--size: 62px;
+	font-size: 20px;
+}
+
+.map-dialog--qr {
+	&-img {
+		border: 1px solid #2E5E2E;
+		box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
+		border-radius: 8px;
+		width: 306px;
+		margin-right: 30px;
+		min-width: 306px;
+		padding: 22px;
+	}
+
+	.place-card {
+		min-height: 0;
+	}
+}
