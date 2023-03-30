@@ -15,8 +15,7 @@
   <div class="root page-started" id="root">
     <div class="started">
       <div class="started__background">
-        <video src="img/started-video.mp4" poster="img/started-poster.jpg" class="started__background-inner" autoplay
-          muted loop>
+        <video src="img/started-video.mp4" poster="img/started-poster.jpg" class="started__background-inner" autoplay muted loop>
 
         </video>
         <div class="started__background-shadow shadow"></div>
@@ -332,6 +331,26 @@
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const defaultHtml = document.getElementById('map-dialog--qr').innerHTML
+      document.getElementById('map-dialog--qr').addEventListener('toggleopen', async (event) => {
+        $cover = event.detail.target
+        $cover.innerHTML = 'Загрузка...'
+        try {
+          const response = await fetch('/local/ajax/dialog-infomat-getqr.php')
+          const result = await response.text()
+
+          $cover.innerHTML = result
+
+        } catch {
+          $cover.innerHTML = defaultHtml
+        }
+
+      })
+    })
+  </script>
 </body>
 
 </html>
