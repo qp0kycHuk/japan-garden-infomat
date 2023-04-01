@@ -11,6 +11,7 @@ import MapDialog from "./components/MapDialog.vue";
 
 import { items } from './itemsData';
 
+console.log('index.js');
 
 const $root = document.getElementById('root')
 
@@ -175,6 +176,7 @@ function arrowHandler(event) {
 }
 
 function clickHandler(event) {
+	console.log('clickHandler');
 	if (event.target.closest('[data-route-to]')) {
 		const page = event.target.closest('[data-route-to]').getAttribute('data-route-to');
 		setPage(page)
