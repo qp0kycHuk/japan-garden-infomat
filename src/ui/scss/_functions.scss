@@ -26,15 +26,15 @@
 @mixin AddMedia() {
   @content;
 
-  &-md {
-    @media (min-width:$md) {
-      @content;
-    }
-  }
+  // &-md {
+  //   @media (min-width:$md) {
+  //     @content;
+  //   }
+  // }
 
-  &-lg {
-    @media (min-width:$lg) {
-      @content;
-    }
-  }
+  // &-lg {
+  //   @media (min-width:$lg) {
+  //     @content;
+  //   }
+  // }
 }

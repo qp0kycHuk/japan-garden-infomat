@@ -2,8 +2,6 @@
 @import '../ui/scss/_functions.scss';
 
 :root {
-	@include getColors(#74A032, "primary");
-	@include getColors(#323338, "text");
 
 	--bg1: #E9EAEC;
 	--bg2: #F4F5F6;
@@ -30,14 +28,16 @@
 	--zi-l7: 327;
 	--zi-l8: 328;
 	--zi-l9: 329;
+	@include getColors(#74A032, "primary");
+	@include getColors(#323338, "text");
 }
 
 body {
-	color: var(--color-text);
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
 	background: url("../img/footer-logo.svg") no-repeat right bottom / auto, #2E5E2E;
+	color: var(--color-text);
 
 	* {
 		font-family: var(--font-base);
@@ -47,20 +47,20 @@ body {
 }
 
 .root {
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	position: relative;
 }
 
 .started {
-	flex-grow: 1;
-	position: relative;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
+	position: relative;
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: var(--zi-l5);
@@ -72,18 +72,18 @@ body {
 		position: absolute;
 		inset: 40px;
 		border: 2px solid #BAD099;
-		pointer-events: none;
 		z-index: 2;
+		pointer-events: none;
 	}
 
 	&__background {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
-		pointer-events: none;
 		z-index: 1;
+		pointer-events: none;
 
 		&-inner {
 			display: block;
@@ -94,8 +94,8 @@ body {
 
 		&-shadow {
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			background: rgba(0, 0, 0, 0.25);
@@ -104,25 +104,25 @@ body {
 
 	&__content {
 		position: relative;
-		z-index: 3;
 		margin: auto;
+		z-index: 3;
 
 	}
 
 	&__btn {
-		font-weight: 700;
-		font-size: 25px;
-		font-feature-settings: 'pnum' on, 'lnum' on;
-		color: #FFFFFF;
+		--circle-r: 32px;
+		position: relative;
 		width: 285px;
 		height: 84px;
-		padding-top: 10px;
-		--circle-r: 32px;
-		background: radial-gradient(circle at center -10px, rgba(0, 0, 0, 0) var(--circle-r), var(--btn-color) calc(var(--circle-r) + 1px));
-		position: relative;
-		transition: transform .5s ease;
 		// transform: translateY(100px);
 		margin-top: 350px;
+		padding-top: 10px;
+		transition: transform .5s ease;
+		background: radial-gradient(circle at center -10px, rgba(0, 0, 0, 0) var(--circle-r), var(--btn-color) calc(var(--circle-r) + 1px));
+		font-size: 25px;
+		font-weight: 700;
+		color: #FFFFFF;
+		font-feature-settings: 'pnum' on, 'lnum' on;
 
 		&:active {
 			background: radial-gradient(circle at center -10px, rgba(0, 0, 0, 0) var(--circle-r), var(--btn-color-light) calc(var(--circle-r) + 1px));
@@ -131,31 +131,31 @@ body {
 
 		&-img {
 			position: absolute;
+			top: -36px;
 			left: calc(50% - 26px);
 			width: 52px;
-			top: -36px;
 		}
 	}
 }
 
 .main {
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 }
 
 .header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	flex-direction: column;
 	position: relative;
 	height: 442px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex-start;
-	background: url("../img/header-bg.jpg") no-repeat center / cover;
-	color: #FFFFFF;
-	padding-left: 60px;
 	padding-right: 60px;
 	padding-bottom: 102px;
+	padding-left: 60px;
+	background: url("../img/header-bg.jpg") no-repeat center / cover;
+	color: #FFFFFF;
 
 	&__img {
 		position: absolute;
@@ -173,8 +173,8 @@ body {
 
 	&__shadow {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.25);
@@ -187,48 +187,48 @@ body {
 	}
 
 	&__sign {
-		font-feature-settings: 'pnum' on, 'lnum' on;
-		font-weight: 400;
-		font-size: 50px;
-		line-height: 1.2;
 		margin-bottom: 22px;
+		font-size: 50px;
+		font-weight: 400;
+		line-height: 1.2;
+		font-feature-settings: 'pnum' on, 'lnum' on;
 	}
 
 	&__title {
-		font-weight: 700;
 		font-size: 90px;
+		font-weight: 700;
 		font-feature-settings: 'pnum' on, 'lnum' on;
 	}
 }
 
 .content {
 	width: 100%;
-	background: #fff;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 1.5;
-	font-feature-settings: 'pnum' on, 'lnum' on;
-	color: #323338;
 	padding: 60px;
+	background: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #323338;
+	font-feature-settings: 'pnum' on, 'lnum' on;
 	// padding-bottom       : 120px;
 }
 
 .map {
 	position: relative;
-	z-index: 2;
 	transition: .75s ease;
 	background: #2E5E2E;
+	z-index: 2;
 
 	&:before {
 		content: '';
 		position: absolute;
+		bottom: 100%;
+		left: 0;
 		width: 100%;
 		height: 123px;
-		left: 0;
-		bottom: 100%;
-		background: linear-gradient(360deg, #FFFFFF 65.94%, rgba(255, 255, 255, 0) 130.87%);
-		transition: .75s ease;
 		opacity: 0;
+		transition: .75s ease;
+		background: linear-gradient(360deg, #FFFFFF 65.94%, rgba(255, 255, 255, 0) 130.87%);
 		pointer-events: none;
 	}
 
@@ -241,25 +241,25 @@ body {
 	}
 
 	&-arrow {
+		position: relative;
 		height: 36px;
 		background: #2E5E2E;
-		position: relative;
 		z-index: 3;
 
 		&__btn {
-			width: 86px;
-			height: 62px;
-			position: absolute;
-			left: calc(50% - 43px);
-			bottom: calc(100% - 10px);
-			background: inherit;
-			border-radius: 20px 20px 0px 0px;
-			padding-bottom: 10px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			flex-direction: column;
+			position: absolute;
+			bottom: calc(100% - 10px);
+			left: calc(50% - 43px);
+			width: 86px;
+			height: 62px;
 			overflow: hidden;
+			padding-bottom: 10px;
+			background: inherit;
+			border-radius: 20px 20px 0px 0px;
 
 			&-top,
 			&-down {
@@ -269,8 +269,8 @@ body {
 			}
 
 			&-down {
-				transform: translateY(35px);
 				margin-bottom: -29px;
+				transform: translateY(35px);
 			}
 		}
 	}
@@ -278,36 +278,36 @@ body {
 	&.active &-arrow {
 		&__btn {
 			&-top {
-				transform: translateY(-35px);
 				margin-top: -29px;
+				transform: translateY(-35px);
 			}
 
 			&-down {
-				transform: translateY(0px);
 				margin-bottom: 0px;
+				transform: translateY(0px);
 			}
 		}
 	}
 
 	&-dialog {
-		position: absolute;
-		left: 0;
-		bottom: 100%;
-		height: 100vh;
-		width: 100%;
-		background: rgba(46, 68, 46, 0.8);
-		z-index: 2;
 
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: flex-end;
+		flex-direction: column;
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		width: 100%;
+		height: 100vh;
 		padding-bottom: 75px;
 
 
 		opacity: 0;
-		pointer-events: none;
 		transition: .5s;
+		background: rgba(46, 68, 46, 0.8);
+		z-index: 2;
+		pointer-events: none;
 
 		.place-card {
 			transform: scale(.5);
@@ -337,14 +337,14 @@ body {
 
 
 		&__btn {
-			box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 			--size: 58px;
 			--btn-color: #74A032;
 			position: absolute;
-			z-index: 2;
-			right: 40px;
 			top: 44%;
+			right: 40px;
 			padding: 10px;
+			box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+			z-index: 2;
 		}
 
 		&.max-scale .map-zoom-in {
@@ -373,8 +373,8 @@ body {
 
 		img {
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -382,51 +382,51 @@ body {
 
 		&-shadow {
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: 3;
 			background: rgba(0, 0, 0, 0.05);
+			z-index: 3;
 		}
 
 		&-clouds {
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: 3;
 			overflow: hidden;
+			z-index: 3;
 
 			&::before,
 			&::after {
 				content: '';
-				background: url("../img/map-clouds.png") no-repeat center / cover;
 				position: absolute;
-				left: calc(-1 * (100% * 2309 / 1480 - 100%) / 2);
 				top: 0;
+				left: calc(-1 * (100% * 2309 / 1480 - 100%) / 2);
 				width: calc(100% * 2309 / 1480);
 				height: 100%;
 				opacity: .25;
+				background: url("../img/map-clouds.png") no-repeat center / cover;
 			}
 
 			&:before {
-				animation: clouds-1 7.5s infinite linear both;
 				background-position: top;
+				animation: clouds-1 7.5s infinite linear both;
 			}
 
 			&::after {
-				animation: clouds-2 7.5s 2.5s infinite linear both;
-				background-position: bottom;
 				top: -20%;
+				background-position: bottom;
+				animation: clouds-2 7.5s 2.5s infinite linear both;
 			}
 		}
 
 		&-ripples {
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			z-index: 3;
@@ -442,20 +442,20 @@ body {
 
 	&-marker {
 		position: absolute;
+		top: 10%;
+		left: 10%;
 		width: 28px;
 		height: 28px;
+		transform: translate(-50%, -50%);
+
+		transition: .35s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 		background: #74A032;
 		border-radius: 50%;
-		left: 10%;
-		top: 10%;
-		transform: translate(-50%, -50%);
-		z-index: 4;
 		box-shadow:
 			0 0 0 5px rgba(201, 243, 137, 0.7),
 			0 0 0 6px rgba(127, 200, 17, 0.7),
 			0 0 0 10px rgba(127, 200, 17, 0.5);
-
-		transition: .35s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+		z-index: 4;
 
 
 
@@ -471,17 +471,17 @@ body {
 		position: absolute;
 		right: 60px;
 		bottom: 48px;
-		z-index: 5;
+		padding: 14px;
 		background: #FFFFFF;
 		border-radius: 8px;
-		padding: 14px;
+		z-index: 5;
 
 		&-title {
-			font-weight: 400;
-			font-size: 13px;
-			font-feature-settings: 'pnum' on, 'lnum' on;
-			text-align: center;
 			margin-bottom: 10px;
+			font-size: 13px;
+			font-weight: 400;
+			text-align: center;
+			font-feature-settings: 'pnum' on, 'lnum' on;
 		}
 
 		&-img {
@@ -492,45 +492,45 @@ body {
 
 	&-self {
 		position: absolute;
-		left: 50.5%;
 		bottom: 4.5%;
+		left: 50.5%;
 		width: 40px;
 		height: 58px;
-		z-index: 4;
 		background: url("../img/self.png") no-repeat center / contain;
+		z-index: 4;
 
 		&:before {
 			content: '';
 			position: absolute;
-			left: -5.5px;
 			bottom: -6px;
+			left: -5.5px;
 			width: 15px;
 			height: 15px;
-			border-radius: 50%;
 			background: rgba(226, 179, 11, 0.5);
+			border-radius: 50%;
 			box-shadow: 0 0 0 4px rgba(226, 179, 11, 0.5), inset 0 0 0 4px rgba(226, 179, 11, 0.5);
 			animation: self-point 4s 2s ease infinite;
 		}
 
 		&__sign {
-			position: absolute;
-			left: 16px;
-			bottom: -12px;
-			font-weight: 400;
-			font-size: 14px;
-			font-feature-settings: 'pnum' on, 'lnum' on;
-			color: #FFFFFF;
-			background: #E2B30B;
-			border: 2px solid #FFFFFF;
-			border-radius: 6px;
-			width: 61px;
-			height: 19px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			position: absolute;
+			bottom: -12px;
+			left: 16px;
+			width: 61px;
+			height: 19px;
+			background: #E2B30B;
+			border: 2px solid #FFFFFF;
+			border-radius: 6px;
 			box-shadow: 0 0 0 4px rgba(226, 179, 11, 0.5);
+			font-size: 14px;
+			font-weight: 400;
+			color: #FFFFFF;
 
 			animation: self-sign 4s ease infinite;
+			font-feature-settings: 'pnum' on, 'lnum' on;
 		}
 
 	}
@@ -579,8 +579,8 @@ body {
 	}
 
 	to {
-		transform: translate(30%, 30%);
 		opacity: 0;
+		transform: translate(30%, 30%);
 	}
 }
 
@@ -598,27 +598,27 @@ body {
 	}
 
 	to {
-		transform: translate(30%, -30%);
 		opacity: 0;
+		transform: translate(30%, -30%);
 	}
 }
 
 .footer {
-	flex-grow: 1;
-	padding: 20px 60px 62px;
 	display: flex;
-	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 20px 60px 62px;
 
 	&__btn {
+		--btn-color: #BAD099;
 		width: 272px;
 		height: 60px;
 		padding: 0;
-		font-weight: 400;
 		font-size: 20px;
+		font-weight: 400;
 		font-feature-settings: 'pnum' on, 'lnum' on;
-		--btn-color: #BAD099;
 
 		&:active {
 			background: var(--color-primary);
@@ -629,22 +629,22 @@ body {
 
 .rules {
 	position: fixed;
-	left: 0;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: var(--zi-l3);
-	background: rgba(46, 68, 46, 0.8);
-	padding: 175px 40px;
 	overflow: auto;
+	padding: 175px 40px;
+	background: rgba(46, 68, 46, 0.8);
+	z-index: var(--zi-l3);
 
 
 	&__inner {
+		width: 100%;
+		transform-origin: left bottom;
+		transition: .5s ease;
 		background: #FFFFFF;
 		border-radius: 8px;
-		width: 100%;
-		transition: .5s ease;
-		transform-origin: left bottom;
 	}
 
 	&__content {
@@ -654,9 +654,9 @@ body {
 	}
 
 	&__list {
-		justify-content: center;
 		--gap-x: 10px;
 		--gap-y: 80px;
+		justify-content: center;
 	}
 
 
@@ -668,42 +668,42 @@ body {
 	}
 
 	&__title {
-		font-weight: 700;
-		font-size: 25px;
 		margin-bottom: 50px;
+		font-size: 25px;
+		font-weight: 700;
 	}
 
 	&__subtitle {
-		font-weight: 400;
-		font-size: 20px;
 		margin-bottom: 126px;
+		font-size: 20px;
+		font-weight: 400;
 	}
 
 	&__btn {
-		border-radius: 0;
-		height: 113px;
 		width: 100%;
-		font-weight: 700;
+		height: 113px;
+		border-radius: 0;
 		font-size: 25px;
+		font-weight: 700;
 	}
 }
 
 .rules-item {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 
 
 	&__img {
-		width: 142px;
-		height: 118px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		width: 142px;
+		height: 118px;
+		margin-bottom: 20px;
+		padding: 15px 18px;
 		background: #BAD099;
 		border-radius: 8px;
-		padding: 15px 18px;
-		margin-bottom: 20px;
 
 
 	}
@@ -714,44 +714,44 @@ body {
 		&::before {
 			content: '';
 			position: absolute;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 182px;
+			height: 5px;
 			transform: rotateZ(45deg);
 			transform: rotateZ(38.5deg);
 			transform-origin: left top;
-			border-radius: 10px;
-			height: 5px;
 			background: #74A032;
+			border-radius: 10px;
 		}
 	}
 
 	&__title {
-		font-weight: 400;
 		font-size: 18px;
+		font-weight: 400;
+		line-height: 1.4;
 		text-align: center;
 		font-feature-settings: 'pnum' on, 'lnum' on;
-		line-height: 1.4;
 	}
 }
 
 .place-card {
-	width: 958px;
-	background: #FFFFFF;
-	box-shadow: 0px 6px 9px rgba(64, 85, 64, 0.45);
-	border-radius: 8px;
-	padding: 6px;
-	padding-right: 50px;
 	display: flex;
 	align-items: center;
 	position: relative;
+	width: 958px;
 	min-height: 328px;
+	padding: 6px;
+	padding-right: 50px;
+	background: #FFFFFF;
+	border-radius: 8px;
+	box-shadow: 0px 6px 9px rgba(64, 85, 64, 0.45);
 
 	&__img {
-		min-width: 280px;
-		width: 280px;
-		margin-right: 30px;
 		align-self: stretch;
+		width: 280px;
+		min-width: 280px;
+		margin-right: 30px;
 
 		img {
 			width: 100%;
@@ -767,8 +767,8 @@ body {
 
 	&__title {
 		margin-bottom: 22px;
-		font-weight: 400;
 		font-size: 30px;
+		font-weight: 400;
 		line-height: 1.15;
 
 		font-feature-settings: 'pnum' on, 'lnum' on;
@@ -780,31 +780,31 @@ body {
 	}
 
 	&__prop {
-		font-weight: 400;
 		font-size: 20px;
+		font-weight: 400;
 		line-height: 1.75;
 
 		span {
-			color: #74A032;
 			font-weight: bold;
+			color: #74A032;
 		}
 	}
 
 	&__description {
-		font-feature-settings: 'pnum' on, 'lnum' on;
-		font-weight: 400;
 		font-size: 18px;
+		font-weight: 400;
 		line-height: 1.67;
+		font-feature-settings: 'pnum' on, 'lnum' on;
 	}
 
 	&__close {
-		position: absolute;
-		right: -20px;
-		top: -25px;
-		box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 		--size: 50px;
-		padding: 10px;
 		--btn-color: #74A032;
+		position: absolute;
+		top: -25px;
+		right: -20px;
+		padding: 10px;
+		box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 	}
 }
 
@@ -827,9 +827,9 @@ body {
 .root:not(.page-started) {
 	.started {
 		opacity: 0;
-		pointer-events: none;
 		transition: 1s ease;
 		transition-delay: .25s;
+		pointer-events: none;
 
 		&__btn {
 			transform: translateY(100px) !important;
@@ -844,8 +844,8 @@ body {
 		pointer-events: none;
 
 		&__inner {
-			transform: translateX(50px) translateY(25%) scale(0.1);
 			opacity: 0;
+			transform: translateX(50px) translateY(25%) scale(0.1);
 		}
 	}
 
@@ -860,16 +860,53 @@ body {
 
 .map-dialog--qr {
 	&-img {
-		border: 1px solid #2E5E2E;
-		box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
-		border-radius: 8px;
 		width: 306px;
-		margin-right: 30px;
 		min-width: 306px;
+		margin-right: 30px;
 		padding: 22px;
+		border: 1px solid #2E5E2E;
+		border-radius: 8px;
+		box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
 	}
 
 	.place-card {
 		min-height: 0;
 	}
+}
+
+.infomat_s-qr {
+	width: 400px;
+	min-width: 400px;
+	margin-left: auto;
+	padding: 16px;
+	background: rgba(226, 179, 11, 0.15);
+	border-radius: 8px;
+
+	&-img {
+		margin-bottom: 30px;
+		padding: 30px;
+		background: rgba(255, 255, 255, 0.6);
+		border-radius: 8px;
+
+	}
+}
+
+.header--infomat_s {
+	justify-content: center;
+	height: 354px;
+	padding-bottom: 0;
+}
+
+.infomat_s-started-btn {
+	width: 566px;
+	height: 113px;
+	margin-top: 58px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.infomat_s-body {
+	background: #fff;
 }

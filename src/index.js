@@ -38,7 +38,7 @@ ripple.attach('.waved')
 ripple.deAttach('.btn--link')
 const globalObject = window
 
-			
+
 
 const appComponent = defineComponent({
 	data() {
@@ -78,15 +78,15 @@ const appComponent = defineComponent({
 			setPage(pages.started)
 
 			const $map = document.querySelector('.map')
-			$map.classList.remove('active');
-			$root.classList.remove('map-active')
+			$map?.classList.remove('active');
+			$root?.classList.remove('map-active')
 
-			mapPanzoom.zoomTo(baseScale);
+			mapPanzoom?.zoomTo(baseScale);
 			const $cover = document.querySelector("#map-panzoom")
-			if (mapPanzoom.transform.scale == maxScale || (mapPanzoom.transform.scale + step) >= maxScale) {
-				$cover.classList.add('max-scale')
+			if (mapPanzoom?.transform.scale == maxScale || (mapPanzoom?.transform.scale + step) >= maxScale) {
+				$cover?.classList.add('max-scale')
 			} else {
-				$cover.classList.remove('max-scale')
+				$cover?.classList.remove('max-scale')
 
 			}
 		},
@@ -115,7 +115,7 @@ app.mount(document.getElementById('map'))
 document.addEventListener('click', clickHandler)
 
 const $arrow = document.querySelector('.map-arrow')
-$arrow.addEventListener(getSupportedEvents().start, arrowHandler)
+$arrow?.addEventListener(getSupportedEvents().start, arrowHandler)
 setPage(currentPage)
 initMapPanzoom()
 
@@ -123,6 +123,7 @@ function initMapPanzoom() {
 	const $zoomInBtn = document.querySelector('.map-zoom-in')
 	const $zoomOutBtn = document.querySelector('.map-zoom-out')
 	const $cover = document.querySelector("#map-panzoom")
+	if (!$cover) return
 
 	mapPanzoom = new Panzoom($cover, {
 		panOnlyZoomed: true,
