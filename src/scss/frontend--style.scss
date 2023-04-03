@@ -875,10 +875,12 @@ body {
 }
 
 .infomat_s-qr {
+	align-self: start;
 	width: 400px;
 	min-width: 400px;
 	margin-left: auto;
 	padding: 16px;
+	padding-bottom: 40px;
 	background: rgba(226, 179, 11, 0.15);
 	border-radius: 8px;
 
@@ -892,8 +894,9 @@ body {
 }
 
 .header--infomat_s {
+	align-items: center;
 	justify-content: center;
-	height: 354px;
+	height: 236px;
 	padding-bottom: 0;
 }
 
