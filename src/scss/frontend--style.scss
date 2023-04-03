@@ -795,6 +795,10 @@ body {
 		font-weight: 400;
 		line-height: 1.67;
 		font-feature-settings: 'pnum' on, 'lnum' on;
+
+		a {
+			pointer-events: none;
+		}
 	}
 
 	&__close {
