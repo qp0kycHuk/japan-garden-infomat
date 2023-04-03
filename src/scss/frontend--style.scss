@@ -29,6 +29,7 @@
 	--zi-l8: 328;
 	--zi-l9: 329;
 	@include getColors(#74A032, "primary");
+	@include getColors(#9B5050, "brown");
 	@include getColors(#323338, "text");
 }
 
@@ -860,6 +861,12 @@ body {
 .qr-btn {
 	--size: 62px;
 	font-size: 20px;
+}
+
+.qr-error {
+	--size: 62px;
+	font-size: 20px;
+	pointer-events: none;
 }
 
 .map-dialog--qr {

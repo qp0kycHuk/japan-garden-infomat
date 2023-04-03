@@ -58,6 +58,9 @@
           <button class="btn btn--sec btn--fill qr-btn" data-toggle-link="map-dialog--qr">
             Получить QR-код
           </button>
+          <button class="btn btn--brown btn--fill qr-error d-none">
+            На сегодняшний день все QR-коды закончились
+          </button>
         </div>
       </div>
       <div class="map" id="map">
@@ -350,6 +353,18 @@
 
       })
     })
+  </script>
+
+  <script>
+    setInterval(() => {
+      fetch('url')
+        .then((response) => response.json())
+        .then((result) => {
+          document.querySelector('.qr-btn').classList.toggle('d-none', result.isError)
+          document.querySelector('.qr-error').classList.toggle('d-none', !result.isError)
+
+        })
+    }, 60 * 1000)
   </script>
 </body>
 

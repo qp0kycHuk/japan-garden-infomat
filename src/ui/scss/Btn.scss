@@ -6,30 +6,30 @@
 	--btn-color      : var(--color-text);
 	--btn-text       : var(--bg3);
 
-	background : none;
-	border     : none;
-	outline    : none;
-	user-select: none;
-	position   : relative;
+	--size       : 40px;
 
 	display        : flex;
 	align-items    : center;
 	justify-content: center;
-
-	--size       : 40px;
+	position   : relative;
 	height       : var(--size);
 	padding      : 0 calc(var(--size) / 2);
-	border-radius: 8px;
-
-	font-size  : 14px;
-	font-family: var(--font-base);
-	font-weight: bold;
 
 	transition: .2s ease;
+
+	background : none;
+	border     : none;
+	border-radius: 8px;
+	outline    : none;
+	font-family: var(--font-base);
+
+	font-size  : 14px;
+	font-weight: bold;
 
 
 	// default variant
 	color: var(--btn-color);
+	user-select: none;
 
 
 	&:focus {
@@ -65,6 +65,13 @@
 
 	}
 
+	&--brown {
+		--btn-color      : var(--color-brown);
+		--btn-color-light: var(--color-brown-50);
+		--btn-text       : #fff;
+
+	}
+
 	&--sec {
 		--btn-color      : #E2B30B;
 		--btn-color-light: #d6bc5b;
@@ -79,8 +86,8 @@
 
 	&--fill {
 		background: var(--btn-color);
-		color     : var(--btn-text);
 		border    : transparent;
+		color     : var(--btn-text);
 
 		&:active {
 			background: var(--btn-color-light);
