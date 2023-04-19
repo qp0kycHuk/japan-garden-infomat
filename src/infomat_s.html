@@ -66,7 +66,7 @@
             <div class="infomat_s-qr">
               <div class="infomat_s-qr-img">
                 <div class="image image--box">
-                  <img src="img/blur.png" alt="" id="qr-image">
+                  <img src="img/blur.png" alt="">
                 </div>
               </div>
               <button class="infomat_s-qr-btn btn btn--sec btn--fill w-100 mb-5" data-fancybox-modal data-src="#dialog" id="get-qr">Получить QR-код</button>
@@ -111,7 +111,7 @@
   <div id="dialog" style="display: none;">
     <div class="place-card place-card-fancybox">
       <div class="map-dialog--qr-img">
-        <img src="img/lk-qr.png" alt="">
+        <img src="img/lk-qr.png" alt="" id="qr-image">
       </div>
       <div class="place-card__content">
         <div class="place-card__title">Отсканируйте QR-код для входа</div>
@@ -137,15 +137,25 @@
         Fancybox.close()
       }
     })
-    
     document.getElementById('get-qr').addEventListener('click', () => {
-      const $cover = document.getElementById('cover')
-      $cover.innerHTML = ''
+      const $img = document.getElementById('qr-image')
+      // $cover.innerHTML = ''
+      // замена картинки при открытии модалки
       fetch('url')
         .then((response) => response.text())
-        .then((src) => $cover.innerHTML = src)
+        .then((src) => $img.src = src)
     })
 
+    setInterval(() => {
+      const $cover = document.getElementById('cover')
+
+      fetch('url')
+        .then((response) => response.text())
+        .then((result) => {
+          $cover.innerHTML = result
+        })
+
+    }, 10000)
   </script>
 </body>
 
