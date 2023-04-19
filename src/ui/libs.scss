@@ -1,2 +1,55 @@
 @import "@fancyapps/ui/dist/panzoom.css";
+@import "@fancyapps/ui/dist/fancybox.css";
 @import './scss/_variables.scss';
+
+
+.fancybox-custom-modal {
+    .fancybox__slide {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .fancybox__content,
+    .fancybox__container {
+      @apply text-gray;
+    }
+  
+    .fancybox__content {
+      max-width: 100%;
+      padding: 0;
+      background: none;
+  
+    }
+  
+    .carousel__button.is-close {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 68px;
+      height: 68px;
+      padding: 16px;
+      animation-delay: .35s !important;
+  
+      @media(max-width:theme('screens.sm')) {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        background: #F3F3F5;
+  
+        border-radius: 50%;
+      }
+  
+      svg {
+        @media(max-width:theme('screens.sm')) {
+          width: 12px;
+          height: 12px;
+          color: #000;
+          filter: none;
+        }
+      }
+    }
+  }

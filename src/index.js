@@ -10,8 +10,8 @@ import MapMarkers from "./components/MapMarkers.vue";
 import MapDialog from "./components/MapDialog.vue";
 
 import { items } from './itemsData';
+import fancybox from './js/fancybox'
 
-console.log('index.js');
 
 const $root = document.getElementById('root')
 
@@ -30,7 +30,7 @@ const minScale = 1;
 const maxScale = 3;
 const step = (maxScale - minScale) / 3;
 
-
+fancybox.init()
 ripple.init()
 toggle.init()
 

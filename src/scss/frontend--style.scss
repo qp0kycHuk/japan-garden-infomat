@@ -890,17 +890,36 @@ body {
 	width: 400px;
 	min-width: 400px;
 	margin-left: auto;
-	padding: 16px;
-	padding-bottom: 40px;
+	padding: 60px;
+	padding-bottom: 32px;
 	background: rgba(226, 179, 11, 0.15);
 	border-radius: 8px;
 
 	&-img {
 		margin-bottom: 30px;
-		padding: 30px;
+		// padding: 30px;
+		// background: rgba(255, 255, 255, 0.6);
+		border-radius: 8px;
+
+	}
+
+	&-btn {
+		width: 100%;
+
+	}
+}
+
+.infomat_s-qr-info {
+	padding: 16px;
+	background: rgba(155, 80, 80, 0.15);
+
+	.infomat_s-qr-img {
 		background: rgba(255, 255, 255, 0.6);
 		border-radius: 8px;
 
+		img {
+			object-fit: scale-down;
+		}
 	}
 }
 

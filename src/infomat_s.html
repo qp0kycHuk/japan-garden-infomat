@@ -62,16 +62,41 @@
               На выход с 7:00 до 23:30
             </div>
           </div>
-          <div class="infomat_s-qr">
-            <div class="infomat_s-qr-img">
-              <div class="image image--box">
-                <img src="https://dshi-mas.nsk.muzkult.ru/media/2021/10/13/1305524924/78c507fba6fa0e17863c12552d87d22b.png" alt="" id="qr-image">
+          <div class="infomat_s-qr-wrapper" id="cover">
+            <div class="infomat_s-qr">
+              <div class="infomat_s-qr-img">
+                <div class="image image--box">
+                  <img src="img/blur.png" alt="" id="qr-image">
+                </div>
+              </div>
+              <button class="infomat_s-qr-btn btn btn--sec btn--fill w-100 mb-5" data-fancybox-modal data-src="#dialog" id="get-qr">Получить QR-код</button>
+              <div class="text-subtitle-2 text--center">
+                Отсканируйте QR-код <br>
+                для входа
               </div>
             </div>
-            <div class="text-subtitle-2 text--center">
-              Отсканируйте QR-код
-              для входа в личный
-              кабинет
+            <!-- или -->
+            <div class="infomat_s-qr infomat_s-qr-info">
+              <div class="infomat_s-qr-img">
+                <div class="image image--box">
+                  <img src="img/aaaaa.png" alt="" id="qr-image">
+                </div>
+              </div>
+              <div class="text-subtitle-2 text--center">
+                На сегодняшний день все <br>
+                QR-коды закончились
+              </div>
+            </div>
+            <!-- или -->
+            <div class="infomat_s-qr infomat_s-qr-info">
+              <div class="infomat_s-qr-img">
+                <div class="image image--box">
+                  <img src="img/bbbbb.png" alt="" id="qr-image">
+                </div>
+              </div>
+              <div class="text-subtitle-2 text--center">
+                Дождитесь открытия
+              </div>
             </div>
           </div>
         </div>
@@ -83,15 +108,44 @@
     <div id="map"></div>
   </div>
 
-  <script>
-    setInterval(() => {
-      const $img = document.getElementById('qr-image')
+  <div id="dialog" style="display: none;">
+    <div class="place-card place-card-fancybox">
+      <div class="map-dialog--qr-img">
+        <img src="img/lk-qr.png" alt="">
+      </div>
+      <div class="place-card__content">
+        <div class="place-card__title">Отсканируйте QR-код для входа</div>
 
+        <div class="place-card__description">
+          1. Отсканируйте QR-код <br>
+          2. Перейдите по ссылке <br>
+          3. Выберите дату и время <br>
+          4. Отметьте количество гостей <br>
+          5. Получите QR-код для посещения <br>
+          6. Сохраните QR-код на смартфон или перешлите его <br>
+          на электронную почту <br>
+        </div>
+      </div>
+      <button class="place-card__close btn btn--primary btn--white-bg btn-fab" data-fancybox-close>
+        <img src="img/cross.svg" alt="">
+      </button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('[data-fancybox-close]')) {
+        Fancybox.close()
+      }
+    })
+    
+    document.getElementById('get-qr').addEventListener('click', () => {
+      const $cover = document.getElementById('cover')
+      $cover.innerHTML = ''
       fetch('url')
         .then((response) => response.text())
-        .then((src) => $img.src = src)
+        .then((src) => $cover.innerHTML = src)
+    })
 
-    }, 10000)
   </script>
 </body>
 

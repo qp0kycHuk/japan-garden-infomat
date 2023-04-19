@@ -113,9 +113,13 @@
               <div class="place-card__title">Отсканируйте QR-код для входа</div>
 
               <div class="place-card__description">
-                1. Отсканируйте QR-код<br>
-                2. Перейдите в личный кабинет<br>
-                3. Получите QR-код для посещения
+                1. Отсканируйте QR-код <br>
+                2. Перейдите по ссылке <br>
+                3. Выберите дату и время <br>
+                4. Отметьте количество гостей   <br>
+                5. Получите QR-код для посещения <br>
+                6. Сохраните QR-код на смартфон или перешлите его  <br>
+                на электронную почту <br>
               </div>
             </div>
             <button class="place-card__close btn btn--primary btn--white-bg btn-fab" data-toggle-link="map-dialog--qr">
@@ -347,9 +351,8 @@
 
           $cover.innerHTML = result
 
-        } catch {
-          $cover.innerHTML = defaultHtml
-        }
+        } catch { }
+        $cover.innerHTML = defaultHtml
 
       })
     })
