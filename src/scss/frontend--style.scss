@@ -923,6 +923,21 @@ body {
 	}
 }
 
+.infomat_s-qr-countout {
+	padding: 16px;
+	background: #9B5050;
+	color: #fff;
+
+	.infomat_s-qr-img {
+		background: #FFFFFF;
+		border-radius: 8px;
+
+		img {
+			object-fit: scale-down;
+		}
+	}
+}
+
 .header--infomat_s {
 	align-items: center;
 	justify-content: center;
