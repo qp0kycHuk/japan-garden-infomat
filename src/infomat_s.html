@@ -10,99 +10,63 @@
 
 <body class="infomat_s-body">
   <div class="root page-started" id="root">
-    <div class="started">
+    <div class="started" data-route-to="page-main">
       <div class="started__background">
-        <!-- <video src="img/started-video.mp4" poster="img/started-poster.jpg" class="started__background-inner" autoplay muted loop>
-
-        </video> -->
-        <img src="img/infomat_s-started.jpg" alt="" class="started__background-inner">
+        <img src="img/started-light_s.jpg" alt="" class="started__background-inner light">
+        <img src="img/started-dark_s.jpg" alt="" class="started__background-inner dark">
+        <!-- <video src="img/started-video.mp4" poster="img/started-poster.jpg" class="started__background-inner" autoplay muted loop></video> -->
         <!-- <div class="started__background-shadow shadow"></div> -->
       </div>
 
       <div class="started__content">
-        <div class="text-h0 text--center color-white">
-          Тут можно получить QR-код для прохода <br>
-          в Японский сад
-        </div>
-        <button class="infomat_s-started-btn btn btn--fill btn--primary" data-route-to="page-main">
-          получить QR-код
+        <button class="started__btn">
+          Войти в сад
         </button>
       </div>
 
     </div>
     <div class="main">
-      <div class="header header--infomat_s">
-        <div class="header__img"><img src="https://japan.parkkrasnodar.com/upload/iblock/26a/9xco7galk3m3s9e9nf010xxycao5esjq.jpg" alt=""></div>
-        <div class="header__shadow shadow"></div>
+      <div class="header">
+        <!-- <div class="header__shadow shadow"></div> -->
         <div class="header__content">
-          <div class="text-h0 text--center">
-            Тут можно получить QR-код для прохода <br>
-            в Японский сад
-          </div>
-
+          <div class="header__sign">Добро пожаловать</div>
+          <div class="header__title">в Японский сад</div>
         </div>
       </div>
       <div class="content">
-        <div class="flex">
+        Уважаемые гости! <br>
+        <br>
+        Посещение Японского сада осуществляется по QR-кодам, которые можно получить в инфоматах расположенных у входа в Японский сад. Время прогулок не ограничено.Японский сад открыт весной 2023 года в парке «Краснодар».Площадь сада - 7,5 гектаров, протяженность пешеходных троп - 3591 метр. В саду высажено 6700 деревьев, 5900 кустарников и 280 000 цветов.Отдельно выложенные камни, являются прогулочными тропами.Зеленые насаждения и газоны молоды и еще очень хрупкие. Пожалуйста, будьте бережны. <br>
+        Режим работы: <br>
+        На вход с 7:00 до 21:30 <br>
+        На выход с 7:00 до 23:30
 
-          <div class="text-subtitle-2 text--regular mr-10">
-            <b> Уважаемые гости!</b>
-            <br><br>
-            Посещение Японского сада осуществляется по QR-кодам, которые можно получить в инфоматах расположенных у входа в Японский сад. Время прогулок не ограничено.
-            <br><br>
-            Японский сад открыт весной 2023 года в парке «Краснодар». <br>
-            Площадь сада - 7,5 гектаров, протяженность пешеходных троп - 3591 метр. В саду высажено 6700 деревьев, 5900 кустарников и 280 000 цветов.
-            Отдельно выложенные камни, являются прогулочными тропами.
-            <br><br>
-            Зеленые насаждения и газоны молоды и еще очень хрупкие. Пожалуйста, будьте бережны.
-            <br><br>
-            <b class="text-h4 mb-2">Режим работы:</b>
-            <div class="text-h6 text--regular">
-              На вход с 7:00 до 21:15 <br>
-              На выход с 7:00 до 23:30
-            </div>
-          </div>
-          <div class="infomat_s-qr-wrapper" id="cover">
-            <div class="infomat_s-qr">
-              <div class="infomat_s-qr-img">
-                <div class="image image--box">
-                  <img src="img/blur.png" alt="">
-                </div>
-              </div>
-              <button class="infomat_s-qr-btn btn btn--sec btn--fill w-100 mb-5" data-fancybox-modal data-src="#dialog" id="get-qr">Получить QR-код</button>
-              <div class="text-subtitle-2 text--center">
-                Отсканируйте QR-код <br>
-                для входа
-              </div>
-            </div>
-            <!-- или -->
-            <div class="infomat_s-qr infomat_s-qr-countout">
-              <div class="infomat_s-qr-img">
-                <div class="image image--box">
-                  <img src="img/aaaaa.png" alt="" id="qr-image">
-                </div>
-              </div>
-              <div class="text-subtitle-2 text--center">
-                На сегодняшний день все <br>
-                QR-коды закончились
-              </div>
-            </div>
-            <!-- или -->
-            <div class="infomat_s-qr infomat_s-qr-info">
-              <div class="infomat_s-qr-img">
-                <div class="image image--box">
-                  <img src="img/bbbbb.png" alt="" id="qr-image">
-                </div>
-              </div>
-              <div class="text-subtitle-2 text--center">
-                Дождитесь открытия
-              </div>
-            </div>
+
+
+
+
+        <div class="flex mt-10">
+          <button class="btn btn--sec btn--fill qr-btn" data-fancybox-modal data-src="#dialog">
+            Получить QR-код
+          </button>
+          <button class="btn btn--brown btn--fill qr-error d-none">
+            На сегодняшний день все QR-коды закончились
+          </button>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer__qr">
+          <img src="img/footer-qr.png" alt="">
+          <div class="mt-3">
+            Возьми карту с собой
           </div>
         </div>
-
+        <div class="ml-auto"></div>
+        <!-- <button class="footer__btn mt-auto ml-auto" data-route-to="page-with-rules">
+          Правила посещения парка
+        </button> -->
+        <img src="img/footer-logo.png" alt="" class="ml-5 mt-auto">
       </div>
-
     </div>
 
     <div id="map"></div>

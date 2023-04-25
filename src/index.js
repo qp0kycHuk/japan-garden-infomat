@@ -106,6 +106,8 @@ const appComponent = defineComponent({
 			items: this.items
 		}
 	}
+
+
 })
 
 const app = Vue.createApp(appComponent)
@@ -116,7 +118,7 @@ app.mount(document.getElementById('map'))
 document.addEventListener('click', clickHandler)
 
 const $arrow = document.querySelector('.map-arrow')
-$arrow?.addEventListener(getSupportedEvents().start, arrowHandler)
+// $arrow?.addEventListener(getSupportedEvents().start, arrowHandler)
 setPage(currentPage)
 initMapPanzoom()
 
@@ -189,3 +191,42 @@ function setPage(page) {
 	Object.values(pages).forEach((el) => $root.classList.remove(el))
 	$root.classList.add(page)
 }
+
+
+function checkTime() {
+	const currentTime = new Date()
+	const nightTime = new Date()
+	const morningTime = new Date()
+	nightTime.setHours(18, 0, 0)
+	morningTime.setHours(6, 0, 0)
+
+	if (currentTime >= nightTime) {
+		morningTime.setDate(morningTime.getDate() + 1)
+	}
+
+	let offset = Math.min(Math.abs(nightTime - currentTime), Math.abs(morningTime - currentTime))
+	if (nightTime - currentTime < 0 && morningTime - currentTime >= 0) {
+		offset = morningTime - currentTime
+	}
+
+	if (nightTime - currentTime >= 0 && morningTime - currentTime < 0) {
+		offset = nightTime - currentTime
+	}
+
+	if (currentTime >= nightTime || currentTime <= morningTime) {
+		document.body.classList.add('dark')
+	}
+
+	if (currentTime <= nightTime && currentTime >= morningTime) {
+		document.body.classList.remove('dark')
+	}
+
+	console.log(document.body.classList.contains('dark') ? 'night' : 'day')
+
+	setTimeout(
+		checkTime,
+		offset + 1000
+	)
+}
+
+checkTime()
