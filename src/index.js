@@ -1,20 +1,34 @@
-const Vue = require('vue/dist/vue.esm-bundler');
-import { defineComponent } from "vue";
-import { Panzoom } from "@fancyapps/ui";
-import toggle from 'npm-kit-toggle';
-import ripple from 'npm-kit-ripple';
+import GLTransitions from "gl-transitions";
+import createREGL from "regl";
+import createREGLTransition from "regl-transition";
+import gsap from "gsap";
+
 
 import './scss/index.scss';
-import getSupportedEvents from "./js/functions/getSupportedEvents";
-import MapMarkers from "./components/MapMarkers.vue";
-import MapDialog from "./components/MapDialog.vue";
 
-import { items } from './itemsData';
-import fancybox from './js/fancybox'
-
+const ASPECT_RATIO = 1
+const canvas = document.getElementById('canvas')
+canvas.width = window.innerWidth * ASPECT_RATIO
+canvas.height = window.innerHeight * ASPECT_RATIO
+const themes = {
+	light: 'LIGHT',
+	dark: 'DARK',
+}
 
 const $root = document.getElementById('root')
 
+
+const regl = createREGL({ canvas: canvas });
+const gl = GLTransitions.find((tr) => tr.name == "morph")
+const transition = createREGLTransition(regl, gl)
+let currentTheme = checkIsNight().isNight ? themes.dark : themes.light
+
+checkTime()
+window.addEventListener('resize',()=>{
+	changeBackground(currentTheme)
+})
+
+// Pages code
 const pages = {
 	started: 'page-started',
 	withRules: 'page-with-rules',
@@ -22,168 +36,16 @@ const pages = {
 }
 
 let currentPage = pages.started;
-console.log(currentPage);
 
-let mapPanzoom;
-const baseScale = 1;
-const minScale = 1;
-const maxScale = 3;
-const step = (maxScale - minScale) / 3;
-
-fancybox.init()
-ripple.init()
-toggle.init()
-
-ripple.attach('.btn')
-ripple.attach('.waved')
-ripple.deAttach('.btn--link')
-const globalObject = window
-
-
-
-const appComponent = defineComponent({
-	data() {
-		return {
-			currentItem: undefined,
-			startedTimeout: undefined,
-			items,
-
-		}
-	},
-	mounted() {
-		document.addEventListener(getSupportedEvents().end, this.mouseEndHundler)
-	},
-	unmounted() {
-		clearTimeout(this.startedTimeout)
-		document.removeEventListener(getSupportedEvents().end, this.mouseEndHundler)
-	},
-	methods: {
-		showItem(item) {
-			if (this.currentItem) {
-				if (this.currentItem.id !== item.id) {
-					this.currentItem = undefined
-					setTimeout(() => this.currentItem = item, 350)
-				} else {
-					this.currentItem = undefined
-				}
-			} else {
-				this.currentItem = item
-
-			}
-		},
-		closeItem() {
-			this.currentItem = undefined
-		},
-		clear() {
-			this.closeItem()
-			setPage(pages.started)
-
-			const $map = document.querySelector('.map')
-			$map?.classList.remove('active');
-			$root?.classList.remove('map-active')
-
-			mapPanzoom?.zoomTo(baseScale);
-			const $cover = document.querySelector("#map-panzoom")
-			if (mapPanzoom?.transform.scale == maxScale || (mapPanzoom?.transform.scale + step) >= maxScale) {
-				$cover?.classList.add('max-scale')
-			} else {
-				$cover?.classList.remove('max-scale')
-
-			}
-		},
-		mouseEndHundler() {
-			clearTimeout(this.startedTimeout)
-			this.startedTimeout = setTimeout(this.clear, 2 * 60 * 1000);
-		}
-
-	},
-	provide() {
-		return {
-			window: globalObject,
-			showItem: this.showItem,
-			closeItem: this.closeItem,
-			getCurrentItem: () => this.currentItem,
-			items: this.items
-		}
-	}
-
-
-})
-
-const app = Vue.createApp(appComponent)
-app.component('map-markers', MapMarkers)
-app.component('map-dialog', MapDialog)
-app.mount(document.getElementById('map'))
 
 document.addEventListener('click', clickHandler)
-
-const $arrow = document.querySelector('.map-arrow')
-// $arrow?.addEventListener(getSupportedEvents().start, arrowHandler)
 setPage(currentPage)
-initMapPanzoom()
-
-function initMapPanzoom() {
-	const $zoomInBtn = document.querySelector('.map-zoom-in')
-	const $zoomOutBtn = document.querySelector('.map-zoom-out')
-	const $cover = document.querySelector("#map-panzoom")
-	if (!$cover) return
-
-	mapPanzoom = new Panzoom($cover, {
-		panOnlyZoomed: true,
-		baseScale,
-		minScale,
-		maxScale,
-		step,
-		pinchToZoom: true,
-		friction: 1,
-		bounceForce: 0.25,
-
-		wheel: () => false,
-		click: () => false,
-	});
-
-	$cover.addEventListener(getSupportedEvents().end, () => {
-		checkPanzoom()
-		setTimeout(checkPanzoom, 100)
-	})
-
-	$zoomInBtn.addEventListener('click', (event) => {
-		event.stopPropagation();
-		mapPanzoom.zoomIn();
-		checkPanzoom()
-
-	})
-
-	$zoomOutBtn.addEventListener('click', (event) => {
-		event.stopPropagation();
-		mapPanzoom.zoomTo(baseScale);
-		checkPanzoom()
-
-	})
-
-	function checkPanzoom() {
-		if (mapPanzoom.transform.scale == maxScale || (mapPanzoom.transform.scale + step) >= maxScale) {
-			$cover.classList.add('max-scale')
-		} else {
-			$cover.classList.remove('max-scale')
-
-		}
-	}
-}
-
-function arrowHandler(event) {
-	const $map = event.target.closest('.map')
-	$map.classList.toggle('active');
-	$root.classList.toggle('map-active')
-}
 
 function clickHandler(event) {
-	console.log('clickHandler');
 	if (event.target.closest('[data-route-to]')) {
 		const page = event.target.closest('[data-route-to]').getAttribute('data-route-to');
 		setPage(page)
 	}
-
 }
 
 function setPage(page) {
@@ -192,8 +54,7 @@ function setPage(page) {
 	$root.classList.add(page)
 }
 
-
-function checkTime() {
+function checkIsNight() {
 	const currentTime = new Date()
 	const nightTime = new Date()
 	const morningTime = new Date()
@@ -204,6 +65,7 @@ function checkTime() {
 		morningTime.setDate(morningTime.getDate() + 1)
 	}
 
+	let isNight = false
 	let offset = Math.min(Math.abs(nightTime - currentTime), Math.abs(morningTime - currentTime))
 	if (nightTime - currentTime < 0 && morningTime - currentTime >= 0) {
 		offset = morningTime - currentTime
@@ -214,14 +76,24 @@ function checkTime() {
 	}
 
 	if (currentTime >= nightTime || currentTime <= morningTime) {
-		document.body.classList.add('dark')
+		isNight = true
 	}
 
 	if (currentTime <= nightTime && currentTime >= morningTime) {
-		document.body.classList.remove('dark')
+		isNight = false
 	}
 
-	console.log(document.body.classList.contains('dark') ? 'night' : 'day')
+	return {
+		isNight,
+		offset
+	}
+}
+
+function checkTime() {
+	const { isNight, offset } = checkIsNight()
+
+	document.body.classList.toggle('dark', isNight)
+	changeBackground(isNight ? themes.dark : themes.light)
 
 	setTimeout(
 		checkTime,
@@ -229,4 +101,52 @@ function checkTime() {
 	)
 }
 
-checkTime()
+async function changeBackground(theme) {
+	const lightSrc = document.querySelector('.started__background-inner.light').currentSrc
+	const darkSrc = document.querySelector('.started__background-inner.dark').currentSrc
+	const imgSrcs = theme == themes.dark ? [lightSrc, darkSrc] : [darkSrc, lightSrc]
+	const imgs = await Promise.all(imgSrcs.map(loadImage))
+	const [from, to] = imgs.map(img => regl.texture(img));
+
+	if (theme === currentTheme) {
+		transition({ from, to, progress: 1 })
+		return
+	}
+	currentTheme = theme
+
+
+
+	const options = {
+		from,
+		to,
+		strength: 0.1,
+		progress: 0
+	}
+
+	const tick = regl.frame(() => {
+		transition(options);
+	});
+
+	gsap.fromTo(
+		options,
+		{ progress: 0, },
+		{
+			progress: 1,
+			duration: 3,
+			onComplete() {
+				tick.cancel()
+			}
+		},
+	)
+
+}
+
+function loadImage(src) {
+	return new Promise((resolve, reject) => {
+		const img = new Image();
+		img.onload = () => resolve(img);
+		img.onerror = reject;
+		img.onabort = reject;
+		img.src = src;
+	});
+}

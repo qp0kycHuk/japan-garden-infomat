@@ -25,11 +25,11 @@
     "raw-loader": "^4.0.2",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
+    "vue-loader": "^17.0.0",
+    "vue-tsc": "^0.39.5",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
-    "vue-loader": "^17.0.0",
-    "vue-tsc": "^0.39.5"
+    "webpack-dev-server": "^3.11.2"
   },
   "postcss": {
     "plugins": {
@@ -38,8 +38,13 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.27",
+    "gl-shader": "^4.3.1",
+    "gl-transitions": "^1.43.0",
+    "gsap": "^3.11.5",
     "npm-kit-ripple": "^1.5.6",
     "npm-kit-toggle": "^1.1.0",
+    "regl": "^2.1.0",
+    "regl-transition": "^1.13.4",
     "vue": "^3.2.36"
   }
 }
