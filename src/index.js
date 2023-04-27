@@ -58,8 +58,8 @@ function checkIsNight() {
 	const currentTime = new Date()
 	const nightTime = new Date()
 	const morningTime = new Date()
-	nightTime.setHours(18, 0, 0)
-	morningTime.setHours(6, 0, 0)
+	nightTime.setHours(22, 0, 0)
+	morningTime.setHours(6, 30, 0)
 
 	if (currentTime >= nightTime) {
 		morningTime.setDate(morningTime.getDate() + 1)
