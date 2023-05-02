@@ -33,6 +33,7 @@ const step = (maxScale - minScale) / 3;
 fancybox.init()
 ripple.init()
 toggle.init()
+window.toggle = toggle
 
 ripple.attach('.btn')
 ripple.attach('.waved')
@@ -188,4 +189,53 @@ function setPage(page) {
 	currentPage = page;
 	Object.values(pages).forEach((el) => $root.classList.remove(el))
 	$root.classList.add(page)
+}
+
+
+checkTime()
+
+function checkIsNight() {
+	const currentTime = new Date()
+	const nightTime = new Date()
+	const morningTime = new Date()
+	nightTime.setHours(22, 0, 0)
+	morningTime.setHours(6, 30, 0)
+
+	if (currentTime >= nightTime) {
+		morningTime.setDate(morningTime.getDate() + 1)
+	}
+
+	let isNight = false
+	let offset = Math.min(Math.abs(nightTime - currentTime), Math.abs(morningTime - currentTime))
+	if (nightTime - currentTime < 0 && morningTime - currentTime >= 0) {
+		offset = morningTime - currentTime
+	}
+
+	if (nightTime - currentTime >= 0 && morningTime - currentTime < 0) {
+		offset = nightTime - currentTime
+	}
+
+	if (currentTime >= nightTime || currentTime <= morningTime) {
+		isNight = true
+	}
+
+	if (currentTime <= nightTime && currentTime >= morningTime) {
+		isNight = false
+	}
+
+	return {
+		isNight,
+		offset
+	}
+}
+
+function checkTime() {
+	const { isNight, offset } = checkIsNight()
+
+	document.body.classList.toggle('dark', isNight)
+
+	setTimeout(
+		checkTime,
+		offset + 1000
+	)
 }

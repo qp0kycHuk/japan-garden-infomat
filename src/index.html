@@ -116,9 +116,9 @@
                 1. Отсканируйте QR-код <br>
                 2. Перейдите по ссылке <br>
                 3. Выберите дату и время <br>
-                4. Отметьте количество гостей   <br>
+                4. Отметьте количество гостей <br>
                 5. Получите QR-код для посещения <br>
-                6. Сохраните QR-код на смартфон или перешлите его  <br>
+                6. Сохраните QR-код на смартфон или перешлите его <br>
                 на электронную почту <br>
               </div>
             </div>
@@ -339,6 +339,29 @@
     </div>
   </div>
 
+  <div class="non-qr" style="display: none;" id="non-qr">
+    <div class="non-qr-content">
+      <div class="non-qr-sign">日本庭園—japanese park—ЯПОНСКИЙ ПАРК</div>
+      <div class="non-qr-title">
+        QR-КОДОВ <br>
+        НА СЕГОДНЯ
+        НЕТ
+      </div>
+      <div class="non-qr-logo">
+        <img src="img/red-logo.png" alt="">
+      </div>
+      <div class="non-qr-link">
+        <div class="non-qr-link-img">
+          <img src="img/qr.png" alt="">
+        </div>
+        <div class="non-qr-link-title">Возьми карту с собой</div>
+      </div>
+      <button class="place-card__close btn btn--primary btn--white-bg btn-fab" data-toggle-link="non-qr">
+        <img src="img/cross.svg" alt="">
+      </button>
+    </div>
+  </div>
+
   <script>
     window.addEventListener('load', () => {
       const defaultHtml = document.getElementById('map-dialog--qr').innerHTML
@@ -351,7 +374,7 @@
 
           $cover.innerHTML = result
 
-        } catch { }
+        } catch {}
         $cover.innerHTML = defaultHtml
 
       })
@@ -369,6 +392,14 @@
         })
     }, 60 * 1000)
   </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      // Открытие заглушки
+      // toggle.toggle('non-qr')
+    })
+  </script>
+
 </body>
 
 </html>
